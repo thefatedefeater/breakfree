@@ -18,8 +18,23 @@ Clash (and Meta) configurations for plug-n-play censorship circumvention, using 
 | Meta China (Safe for Work) [^1] | ❌ Advertisement <br> ❌ MS Windows Analytics <br> ❌ Pornography <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/meta-cn-sfw.yaml) <br> [JSDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/meta-cn-sfw.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/meta-cn-sfw.yaml) |
 | Meta Others [^2] | ❌ Advertisement <br> ❌ MS Windows Analytics <br> 🛡️ Anything Else | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/meta-others.yaml) <br> [JSDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/meta-others.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/meta-others.yaml) |
 | Meta Others (Safe for Work) [^1][^2] | ❌ Advertisement <br> ❌ MS Windows Analytics <br> ❌ Pornography <br> 🛡️ Anything Else | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/meta-others-sfw.yaml) <br> [JSDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/meta-others-sfw.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/meta-others-sfw.yaml) |
-
+| Clash Iran | 🌐 .ir TLD [^3] <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/clash-ir.yaml) <br> [JSDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/clash-ir.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/clash-ir.yaml) |
 > ❌: Blocked <br> 🌐: Direct Connection <br> 🛡️: Proxied
 
+## 🦮 Tutorials
+
+
+## 👨‍👩‍👧‍👦 Contribute
+For contribution to perfect the project, you can:
+- Introduce new sources of aggregated servers
+- Test and feedback
+- Helping with the [issues](https://github.com/demarcush/breakfree/issues)
+- Make a [pull request](https://github.com/demarcush/breakfree/pulls) with a config of your own country
+- Translate this README to your language
+- Anything else you can think of...
+
+## ❤️ Credits
+
 [^1]: Safe for Work: Equipped with pornography blocking (And soon gambling too)
-[^2]: Others: Every connection not blocked will be proxied (Not recommended for censored countries e.g. Iran, China, Russia, ...)
+[^2]: Others: Every connection not blocked will be proxied (Not recommended for censored countries e.g. Iran, China, Russia, etc.)
+[^3]: Not including websites hosted in your country that have .com, .org, etc. TLDs. For Iran that's almost 70k unique websites.
