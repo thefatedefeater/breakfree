@@ -1,0 +1,128 @@
+                          ## COUNTRY: CHINA ##
+## IMPORTANT: Import the appropriate config URL for your country of residence;-
+# e.g. "meta-ir.yaml" if in Iran, instead of manually adjusting it,-
+# to ensure bypassing local services while still receiving updates for the config!
+## مهم: آدرس URL کانفیگ مناسب با کشور خود را به نرم افزار وارد کنید؛ مثلا "meta-ir.yaml" برای ایران،-
+# بجای دستی تنظیم کردن ، تا علاوه بر پروکسی نشدن سرویس های محلی، برای کانفیگ آپدیت دریافت کنید!
+
+          ## In case of modifications, read comments carefully! ##
+
+## For Clash.Meta -- Possible to use with Clash Premium but not tested.
+## Android client:
+## Preferable: Universal APK with new-version discovery if F-Droid store is installed:
+# https://f-droid.org/en/packages/com.github.metacubex.clash.meta:
+## Arch-specific builds, manual discovery and update, but faster newer releases:
+# https://github.com/MetaCubeX/ClashMetaForAndroid/releases:
+## Other clients: https://wiki.metacubex.one/client
+
+mixed-port: 7890
+allow-lan: false
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: always
+global-client-fingerprint: random
+geodata-mode: true
+mode: rule
+log-level: error ## silent/error/warning/info/debug
+ipv6: false
+external-controller: '127.0.0.1:9090'
+profile:
+  store-selected: false ## It's best to default to "auto" every time it restarts.
+  store-fake-ip: true
+
+#tun:
+  #enable: true
+  #stack: system ## system/lwip/gvisor
+  #dns-hijack:
+    #- 'any:53'
+    #- "tcp://any:53"
+  #auto-route: true
+  #auto-redir: true
+  #auto-detect-interface: true
+
+dns:
+  enable: false ## Hypothetically not needed with `geolocation-!cn` rule. Otherwise, please report.
+
+proxy-groups:
+
+- name: global
+  type: select
+  proxies:
+    - auto
+    - manual
+    - DIRECT
+    - REJECT
+
+- name: manual
+  type: select
+  use:
+    #- local
+    - aggregator
+    - yebekhe
+
+- name: auto
+  type: url-test
+  #filter: "🏁|🚩"
+  use:
+    #- local
+    - aggregator
+    - yebekhe
+
+proxy-providers:
+
+  #local:
+    #type: file
+    #path: ./providers/local.yaml ## << Put your custom servers here. Clash.Meta also accepts ss://, vmess://, trojan:// and other URLs.
+    #health-check:
+      #enable: true
+      #interval: 3600
+      #lazy: true
+      #url: "https://cp.cloudflare.com"
+      ##url: "https://cdn.jsdelivr.net"
+      ##url: "https://detectportal.firefox.com/success.txt"
+
+  aggregator:
+    type: http
+    url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
+    #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
+    interval: 86400
+    path: ./providers/aggregator.yaml
+    health-check:
+      enable: true
+      interval: 3600
+      lazy: true
+      url: "https://cp.cloudflare.com"
+      #url: "https://cdn.jsdelivr.net"
+      #url: "https://detectportal.firefox.com/success.txt"
+
+  yebekhe:
+    type: http
+    url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
+    interval: 86400
+    path: ./providers/yebekhe.yaml
+    health-check:
+      enable: true
+      interval: 3600
+      lazy: true
+      url: "https://cp.cloudflare.com"
+      #url: "https://cdn.jsdelivr.net"
+      #url: "https://detectportal.firefox.com/success.txt"
+
+rules:
+  - GEOSITE,category-ads-all,REJECT ## Rejects advertisements.
+  - GEOSITE,win-spy,REJECT ## Rejects MS Windows analytics and spying.
+  #- GEOSITE,category-porn,REJECT ## Porno blocking
+
+  - DOMAIN-SUFFIX,cn,DIRECT ## *
+  - GEOSITE,cn,DIRECT ## *
+  #- GEOSITE,category-games,DIRECT ## Online gaming
+  - DOMAIN,d.metacubex.one,DIRECT ## Meta Dashboard
+  - DOMAIN,yacd.metacubex.one,DIRECT ## YACD for Clash Meta
+  - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
+
+  - GEOSITE,geolocation-!cn,global ## Intentional: Avoids DNS pollution.
+  - GEOIP,private,DIRECT ## Loopback and LAN IPs
+  - GEOIP,CN,DIRECT ## *
+  - MATCH,global
+
+    ## *: Check "provider-meta.yml" for Iran's config.
