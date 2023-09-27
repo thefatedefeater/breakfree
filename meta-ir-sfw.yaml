@@ -1,19 +1,7 @@
-                          ## COUNTRY: IRAN (SAFE FOR WORK) ##
-## IMPORTANT: Import the appropriate config URL for your country of residence;-
-# e.g. "meta-cn-sfw.yaml" if in China, instead of manually adjusting it,-
-# to ensure bypassing local services while still receiving updates for the config!
-## 重要提示：为您居住的国家/地区导入适当的配置 URL；例如 “meta-cn-sfw.yaml”-
-# 如果在中国而不是手动调整它，以确保绕过本地服务同时仍然接收配置更新！ （谷歌翻译）
-
-          ## In case of modifications, read comments carefully! ##
-
-## For Clash.Meta -- Possible to use with Clash Premium but not tested.
-## Android client:
-## Preferable: Universal APK with new-version discovery if F-Droid store is installed:
-# https://f-droid.org/en/packages/com.github.metacubex.clash.meta:
-## Arch-specific builds, manual discovery and update, but faster newer releases:
-# https://github.com/MetaCubeX/ClashMetaForAndroid/releases:
-## Other clients: https://wiki.metacubex.one/client
+# License: AGPL-v3.0
+# Repository: https://github.com/demarcush/breakfree
+## Software: Clash Meta
+## Country: Iran (Safe for Work)
 
 mixed-port: 7890
 allow-lan: false
@@ -29,6 +17,11 @@ external-controller: '127.0.0.1:9090'
 profile:
   store-selected: false ## It's best to default to "auto" every time it restarts.
   store-fake-ip: true
+
+ntp:
+  enable: true
+  write-to-system: false
+  server: pool.ntp.org
 
 #tun:
   #enable: true
@@ -100,6 +93,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
     #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
+    #url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
     interval: 86400
     path: ./providers/aggregator.yaml
     health-check:
@@ -112,7 +106,7 @@ proxy-providers:
 
   yebekhe:
     type: http
-    url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
+    url: "https://yebekhe.link/api/toClash/?url=https://cdn.jsdelivr.net/gh/yebekhe/TelegramV2rayCollector@main/sub/base64/mix&type=clash&process=proxies"
     interval: 86400
     path: ./providers/yebekhe.yaml
     health-check:
@@ -142,21 +136,19 @@ rule-providers:
     interval: 604800
 
 rules:
-  - GEOSITE,category-ads-all,REJECT ## Rejects advertisements.
-  - GEOSITE,win-spy,REJECT ## Rejects MS Windows analytics and spying.
-  - RULE-SET,iran_ads,REJECT ## Rejects Persian ads. [PersianBlocker](https://github.com/MasterKia/PersianBlocker) (License: AGPLv3)
-  - GEOSITE,category-porn,REJECT ## Porno blocking
+  - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,win-spy,REJECT ## MS Windows analytics and spying
+  - RULE-SET,iran_ads,REJECT ## Persian ads [PersianBlocker](https://github.com/MasterKia/PersianBlocker) (License: AGPLv3)
+  - GEOSITE,category-porn,REJECT ## Pornography
 
-  - DOMAIN-SUFFIX,ir,DIRECT ## *
-  - GEOSITE,category-ir,DIRECT ## *
-  - RULE-SET,iran_other,DIRECT ## * [Bootmortis/iran-hosted-domains](https://github.com/bootmortis/iran-hosted-domains) (License: MIT)
-  #- GEOSITE,category-games,DIRECT ## Online gaming
   - DOMAIN,d.metacubex.one,DIRECT ## Meta Dashboard
   - DOMAIN,yacd.metacubex.one,DIRECT ## YACD for Clash Meta
   - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
+  - DOMAIN-SUFFIX,ir,DIRECT
+  - GEOSITE,category-ir,DIRECT
+  - RULE-SET,iran_other,DIRECT ## [Bootmortis/iran-hosted-domains](https://github.com/bootmortis/iran-hosted-domains) (License: MIT)
+  #- GEOSITE,category-games,DIRECT ## Gaming
 
   - GEOIP,private,DIRECT ## Loopback and LAN IPs
   - GEOIP,IR,DIRECT ## *
   - MATCH,global
-
-    ## *: Check "provider-meta-cn.yml" for China's config.

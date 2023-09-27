@@ -1,7 +1,7 @@
 # License: AGPL-v3.0
 # Repository: https://github.com/demarcush/breakfree
 ## Software: Clash Meta
-## Country: Others (Safe for Work)
+## Country: Iran Beta
 
 mixed-port: 7890
 allow-lan: false
@@ -23,6 +23,14 @@ ntp:
   write-to-system: false
   server: pool.ntp.org
 
+geox-url:
+  geoip: "https://github.com/Chocolate4U/Iran-v2ray-rules/releases/latest/download/geoip.dat"
+  #geoip: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-v2ray-rules@releases/latest/download/geoip.dat"
+  geosite: "https://github.com/Chocolate4U/Iran-v2ray-rules/releases/latest/download/geosite.dat"
+  #geosite: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-v2ray-rules@releases/latest/download/geosite.dat"
+  mmdb: "https://github.com/Chocolate4U/Iran-clash-rules/releases/latest/download/geoip.metadb"
+  #mmdb: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@releases/latest/download/geoip.metadb"
+
 #tun:
   #enable: true
   #stack: system ## system/lwip/gvisor
@@ -43,10 +51,13 @@ dns:
   enhanced-mode: fake-ip
   use-hosts: true
   nameserver:
-    - "https://1.1.1.1/dns-query"
-    - "https://8.8.8.8/dns-query"
+    - "https://1.1.1.1/dns-query" # MCI
+    - "https://8.8.8.8/dns-query" # MCI
+    - "https://sky.rethinkdns.com/dns-query" # MTN
+    - "https://snoke.meganerd.nl/dns-query" # MTN
   fallback-filter:
-    geoip: false
+    geoip: false # TODO
+    geoip-code: IR
 
 proxy-groups:
 
@@ -116,13 +127,18 @@ proxy-providers:
 
 rules:
   - GEOSITE,category-ads-all,REJECT
-  - GEOSITE,win-spy,REJECT ## MS Windows analytics and spying
-  - GEOSITE,category-porn,REJECT ## Pornography
+  - GEOSITE,malware,REJECT
+  - GEOSITE,phishing,REJECT
+  - GEOSITE,cryptominers,REJECT
+  #- GEOSITE,nsfw,REJECT ## Pornography and gambling
+  - GEOIP,malware,REJECT
+  - GEOIP,phishing,REJECT
 
   - DOMAIN,d.metacubex.one,DIRECT ## Meta Dashboard
   - DOMAIN,yacd.metacubex.one,DIRECT ## YACD for Clash Meta
   - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
-  #- GEOSITE,category-games,DIRECT ## Gaming
+  - GEOSITE,IR,DIRECT
+  - GEOIP,private,DIRECT
+  - GEOIP,IR,DIRECT
 
-  - GEOIP,private,DIRECT ## Loopback and LAN IPs
   - MATCH,global

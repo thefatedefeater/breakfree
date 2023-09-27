@@ -1,19 +1,7 @@
-                  ## COUNTRY: OTHERS ##
-## IMPORTANT: Import the appropriate config URL for your country of residence;-
-# e.g. "clash-ir.yaml" if in Iran, instead of manually adjusting it,-
-# to ensure bypassing local services while still receiving updates for the config!
-## 重要提示：为您居住的国家/地区导入适当的配置 URL；例如 “clash-cn.yaml”-
-# 如果在中国而不是手动调整它，以确保绕过本地服务同时仍然接收配置更新！ （谷歌翻译）
-## مهم: آدرس URL کانفیگ مناسب با کشور خود را به نرم افزار وارد کنید؛ مثلا "clash-ir.yaml" برای ایران،-
-# بجای دستی تنظیم کردن ، تا علاوه بر پروکسی نشدن سرویس های محلی، برای کانفیگ آپدیت دریافت کنید!
-
-          ## In case of modifications, read comments carefully! ##
-
-## For Clash FOSS -- Can also be used with Clash.Meta but `provider-meta-others.yml` is more suitable.
-## Android client is available on:
-# Github: https://github.com/Kr328/ClashForAndroid/releases/latest
-# Playstore: https://play.google.com/store/apps/details?id=com.github.kr328.clash
-# Izzyondroid: https://apt.izzysoft.de/fdroid/index/apk/com.github.kr328.clash.foss
+# License: AGPL-v3.0
+# Repository: https://github.com/demarcush/breakfree
+## Software: Clash
+## Country: Others
 
 mixed-port: 7890
 allow-lan: false
@@ -91,6 +79,7 @@ proxy-providers:
     type: http
     url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
     #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
+    #url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
     interval: 86400
     path: ./providers/aggregator.yaml
     health-check:
@@ -103,7 +92,7 @@ proxy-providers:
 
   yebekhe:
     type: http
-    url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
+    url: "https://yebekhe.link/api/toClash/?url=https://cdn.jsdelivr.net/gh/yebekhe/TelegramV2rayCollector@main/sub/base64/mix&type=clash&process=proxies"
     interval: 86400
     path: ./providers/yebekhe.yaml
     health-check:
