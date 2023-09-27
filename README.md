@@ -1,6 +1,5 @@
 # 🆓 Break Free!
-Clash (and Meta) configurations for plug-n-play censorship circumvention, using freely available sources
-
+Clash (and Meta) configurations for plug-n-play censorship circumvention, using freely available sources  
 👥 [Telegram Group](https://t.me/BreakRealFree)
 
 ## 🏁 Softwares
@@ -26,19 +25,27 @@ Clash (and Meta) configurations for plug-n-play censorship circumvention, using 
 > ❌: Blocked <br> 🌐: Direct Connection <br> 🛡️: Proxied
 
 ## 🦮 Tutorials
-
+WIP
 
 ## 👨‍👩‍👧‍👦 Contribute
 For contribution to perfect the project, you can:
 - Introduce new sources of aggregated servers
 - Test and feedback
-- Helping with the [issues](https://github.com/demarcush/breakfree/issues)
+- Help with the [issues](https://github.com/demarcush/breakfree/issues)
 - Make a [pull request](https://github.com/demarcush/breakfree/pulls) with a config of your own country
 - Translate this README to your language
 - Anything else you can think of...
 
 ## ❤️ Credits
+- [Clash](https://github.com/Dreamacro/clash)
+- [MetaCubeX](https://github.com/MetaCubeX)
+- [mahdibland/V2RayAggregator](https://github.com/mahdibland/V2RayAggregator)
+- [yebekhe/TelegramV2rayCollector](https://github.com/yebekhe/TelegramV2rayCollector)
+- [MasterKia/PersianBlocker](https://github.com/MasterKia/PersianBlocker)
+- [bootmortis/iran-hosted-domains](https://github.com/bootmortis/iran-hosted-domains)
+- [Chocolate4U](https://github.com/Chocolate4U)
+- And others who made this possible. Thank you! ❤️
 
 [^1]: Safe for Work: Equipped with pornography blocking (And soon gambling too)
 [^2]: Others: Every connection not blocked will be proxied (Not recommended for censored countries e.g. Iran, China, Russia, etc.)
-[^3]: Not including websites hosted in your country that have .com, .org, etc. TLDs. For Iran that's ~70k unique websites.
+[^3]: Not including websites hosted in your country that have .com, .org, etc. TLDs. For Iran that's ~70k unique websites
