@@ -47,5 +47,5 @@ For contribution to perfect the project, you can:
 - And others who made this possible. Thank you! ❤️
 
 [^1]: Safe for Work: Equipped with pornography blocking (And soon gambling too)
-[^2]: 🌏 Others: Every connection not blocked will be proxied (Not recommended for censored countries e.g. Iran, China, Russia, etc.)
+[^2]: Others 🌏: Every connection not blocked will be proxied (Not recommended for censored countries e.g. Iran, China, Russia, etc.)
 [^3]: Not including domains hosted in your country that have .com, .org, etc. TLDs. For Iran that's ~70k unique domains
