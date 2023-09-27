@@ -1,9 +1,7 @@
-                  ## COUNTRY: OTHERS ##
+                          ## COUNTRY: CHINA (SAFE FOR WORK) ##
 ## IMPORTANT: Import the appropriate config URL for your country of residence;-
 # e.g. "meta-ir.yaml" if in Iran, instead of manually adjusting it,-
 # to ensure bypassing local services while still receiving updates for the config!
-## 重要提示：为您居住的国家/地区导入适当的配置 URL；例如 “meta-cn.yaml”-
-# 如果在中国而不是手动调整它，以确保绕过本地服务同时仍然接收配置更新！ （谷歌翻译）
 ## مهم: آدرس URL کانفیگ مناسب با کشور خود را به نرم افزار وارد کنید؛ مثلا "meta-ir.yaml" برای ایران،-
 # بجای دستی تنظیم کردن ، تا علاوه بر پروکسی نشدن سرویس های محلی، برای کانفیگ آپدیت دریافت کنید!
 
@@ -43,19 +41,7 @@ profile:
   #auto-detect-interface: true
 
 dns:
-  enable: true
-  #listen: '127.0.0.1:53' ## Or 0.0.0.0:53 for LAN.
-  ipv6: true
-  prefer-h3: true
-  default-nameserver:
-    - '1.1.1.1'
-  enhanced-mode: fake-ip
-  use-hosts: true
-  nameserver:
-    - "https://1.1.1.1/dns-query"
-    - "https://8.8.8.8/dns-query"
-  fallback-filter:
-    geoip: false
+  enable: false ## Hypothetically not needed with `geolocation-!cn` rule. Otherwise, please report.
 
 proxy-groups:
 
@@ -125,12 +111,18 @@ proxy-providers:
 rules:
   - GEOSITE,category-ads-all,REJECT ## Rejects advertisements.
   - GEOSITE,win-spy,REJECT ## Rejects MS Windows analytics and spying.
-  #- GEOSITE,category-porn,REJECT ## Porno blocking
+  - GEOSITE,category-porn,REJECT ## Porno blocking
 
+  - DOMAIN-SUFFIX,cn,DIRECT ## *
+  - GEOSITE,cn,DIRECT ## *
   #- GEOSITE,category-games,DIRECT ## Online gaming
   - DOMAIN,d.metacubex.one,DIRECT ## Meta Dashboard
   - DOMAIN,yacd.metacubex.one,DIRECT ## YACD for Clash Meta
   - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
 
+  - GEOSITE,geolocation-!cn,global ## Intentional: Avoids DNS pollution.
   - GEOIP,private,DIRECT ## Loopback and LAN IPs
+  - GEOIP,CN,DIRECT ## *
   - MATCH,global
+
+    ## *: Check "provider-meta.yml" for Iran's config.
