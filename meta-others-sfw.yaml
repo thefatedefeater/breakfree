@@ -1,4 +1,4 @@
-                  ## COUNTRY: OTHERS ##
+                  ## COUNTRY: OTHERS (SAFE FOR WORK) ##
 ## IMPORTANT: Import the appropriate config URL for your country of residence;-
 # e.g. "meta-ir.yaml" if in Iran, instead of manually adjusting it,-
 # to ensure bypassing local services while still receiving updates for the config!
@@ -125,7 +125,7 @@ proxy-providers:
 rules:
   - GEOSITE,category-ads-all,REJECT ## Rejects advertisements.
   - GEOSITE,win-spy,REJECT ## Rejects MS Windows analytics and spying.
-  #- GEOSITE,category-porn,REJECT ## Porno blocking
+  - GEOSITE,category-porn,REJECT ## Porno blocking
 
   #- GEOSITE,category-games,DIRECT ## Online gaming
   - DOMAIN,d.metacubex.one,DIRECT ## Meta Dashboard
