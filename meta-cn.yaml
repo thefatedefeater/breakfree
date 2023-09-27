@@ -116,5 +116,5 @@ rules:
 
   - GEOSITE,geolocation-!cn,global ## Avoids DNS pollution
   - GEOIP,private,DIRECT ## Loopback and LAN IPs
-  - GEOIP,CN,DIRECT ## *
+  - GEOIP,CN,DIRECT
   - MATCH,global

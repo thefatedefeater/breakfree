@@ -150,5 +150,5 @@ rules:
   #- GEOSITE,category-games,DIRECT ## Gaming
 
   - GEOIP,private,DIRECT ## Loopback and LAN IPs
-  - GEOIP,IR,DIRECT ## *
+  - GEOIP,IR,DIRECT
   - MATCH,global
