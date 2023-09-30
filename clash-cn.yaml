@@ -27,8 +27,6 @@ dns:
   enable: true # TODO: Please report functional unfiltered DoH servers from China.
   #listen: '127.0.0.1:53' ## Or 0.0.0.0:53 for LAN.
   ipv6: true
-  default-nameserver:
-    - '114.114.114.114'
   enhanced-mode: fake-ip
   use-hosts: true
   nameserver:
@@ -112,6 +110,6 @@ rules:
   - DOMAIN-SUFFIX,cn,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
 
-  - GEOIP,private,DIRECT ## Loopback and LAN IPs
   - GEOIP,CN,DIRECT
+  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
   - MATCH,global

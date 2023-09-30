@@ -27,14 +27,12 @@ dns:
   enable: true
   #listen: '127.0.0.1:53' ## Or 0.0.0.0:53 for LAN.
   ipv6: true
-  default-nameserver:
-    - '1.1.1.1'
   enhanced-mode: fake-ip
   use-hosts: true
   nameserver:
     - "https://1.1.1.1/dns-query" # MCI
     - "https://8.8.8.8/dns-query" # MCI
-    - "https://sky.rethinkdns.com/dns-query" # MTN
+    - "https://max.rethinkdns.com/dns-query" # MTN
     - "https://snoke.meganerd.nl/dns-query" # MTN
   fallback-filter:
     geoip: false # TODO
@@ -111,6 +109,6 @@ rules:
   - DOMAIN-SUFFIX,ir,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
 
-  - GEOIP,private,DIRECT ## Loopback and LAN IPs
   - GEOIP,IR,DIRECT
+  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
   - MATCH,global

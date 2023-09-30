@@ -187,11 +187,11 @@ rules:
 
   - RULE-SET,apps,DIRECT
 
+  #- GEOSITE,category-games,DIRECT ## Gaming
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
   - OR,((GEOSITE,cn),(GEOIP,CN)),DIRECT
-  #- GEOSITE,category-games,DIRECT ## Gaming
 
-  - NOT,((GEOSITE,cn)),global ## Avoids DNS pollution
-  - GEOIP,private,DIRECT ## Loopback and LAN IPs
+  - GEOSITE,geolocation-!cn,global ## Avoids DNS pollution
+  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
 
   - MATCH,global

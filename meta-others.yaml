@@ -34,7 +34,17 @@ ntp:
   #auto-detect-interface: true
 
 dns:
-  enable: false
+  enable: true
+  #listen: '127.0.0.1:53' ## Or 0.0.0.0:53 for LAN.
+  ipv6: true
+  prefer-h3: true
+  enhanced-mode: fake-ip
+  use-hosts: true
+  nameserver:
+    - "https://1.1.1.1/dns-query"
+    - "https://8.8.8.8/dns-query"
+  fallback-filter:
+    geoip: false
 
 proxy-groups:
 
@@ -187,11 +197,11 @@ rules:
 
   - RULE-SET,apps,DIRECT
 
+  #- GEOSITE,category-games,DIRECT ## Gaming
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
 
-  #- GEOSITE,category-games,DIRECT ## Gaming
 
 
-  - GEOIP,private,DIRECT ## Loopback and LAN IPs
+  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
 
   - MATCH,global
