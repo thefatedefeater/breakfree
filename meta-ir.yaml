@@ -34,22 +34,7 @@ ntp:
   #auto-detect-interface: true
 
 dns:
-  enable: true
-  #listen: '127.0.0.1:53' ## Or 0.0.0.0:53 for LAN.
-  ipv6: true
-  prefer-h3: true
-  default-nameserver:
-    - '1.1.1.1'
-  enhanced-mode: fake-ip
-  use-hosts: true
-  nameserver:
-    - "https://1.1.1.1/dns-query" # MCI
-    - "https://8.8.8.8/dns-query" # MCI
-    - "https://sky.rethinkdns.com/dns-query" # MTN
-    - "https://snoke.meganerd.nl/dns-query" # MTN
-  fallback-filter:
-    geoip: false # TODO
-    geoip-code: IR
+  enable: false
 
 proxy-groups:
 
@@ -121,36 +106,110 @@ proxy-providers:
 
 rule-providers:
 
-  iran_other:
+  nsfw:
     type: http
     format: text
     behavior: domain
-    url: "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_other.txt"
-    path: ./ruleset/iran_other.txt
-    interval: 604800
+    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/nsfw.txt"
+    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/nsfw.txt"
+    path: ./ruleset/nsfw.txt
+    interval: 259200
 
-  iran_ads:
+  category-ads-all:
     type: http
     format: text
     behavior: domain
-    url: "https://github.com/MasterKia/iran-hosted-domains/releases/latest/download/clash_rules_ads.txt"
-    path: ./ruleset/iran_ads.txt
-    interval: 604800
+    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/category-ads-all.txt"
+    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/category-ads-all.txt"
+    path: ./ruleset/category-ads-all.txt
+    interval: 259200
+
+  malware:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/malware.txt"
+    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/malware.txt"
+    path: ./ruleset/malware.txt
+    interval: 259200
+
+  phishing:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/phishing.txt"
+    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/phishing.txt"
+    path: ./ruleset/phishing.txt
+    interval: 259200
+
+  cryptominers:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/cryptominers.txt"
+    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/cryptominers.txt"
+    path: ./ruleset/cryptominers.txt
+    interval: 259200
+
+  malware-ip:
+    type: http
+    format: text
+    behavior: ipcidr
+    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/malware-ip.txt"
+    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/malware-ip.txt"
+    path: ./ruleset/malware-ip.txt
+    interval: 259200
+
+  phishing-ip:
+    type: http
+    format: text
+    behavior: ipcidr
+    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/phishing-ip.txt"
+    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/phishing-ip.txt"
+    path: ./ruleset/phishing-ip.txt
+    interval: 259200
+
+  apps:
+    type: http
+    format: yaml
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
+    #url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    path: ./ruleset/apps.yaml
+    interval: 259200
+
+  ir-apps:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/apps.txt"
+    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/apps.txt"
+    path: ./ruleset/ir-apps.txt
+    interval: 259200
+
+  ir:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt"
+    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/ir.txt"
+    path: ./ruleset/ir.txt
+    interval: 259200
 
 rules:
-  - GEOSITE,category-ads-all,REJECT
-  - GEOSITE,win-spy,REJECT ## MS Windows analytics and spying
-  - RULE-SET,iran_ads,REJECT ## Persian ads [PersianBlocker](https://github.com/MasterKia/PersianBlocker) (License: AGPLv3)
-  #- GEOSITE,category-porn,REJECT ## Pornography
+  - OR,((GEOSITE,category-ads-all),(RULE-SET,category-ads-all)),REJECT
+  - OR,((RULE-SET,malware),(RULE-SET,phishing),(RULE-SET,cryptominers),(GEOSITE,win-spy)),REJECT
+  #- OR,((GEOSITE,category-porn),(RULE-SET,nsfw)),REJECT ## Pornography and gambling
 
-  - DOMAIN,d.metacubex.one,DIRECT ## Meta Dashboard
-  - DOMAIN,yacd.metacubex.one,DIRECT ## YACD for Clash Meta
-  - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
-  - DOMAIN-SUFFIX,ir,DIRECT
-  - GEOSITE,category-ir,DIRECT
-  - RULE-SET,iran_other,DIRECT ## [Bootmortis/iran-hosted-domains](https://github.com/bootmortis/iran-hosted-domains) (License: MIT)
+  - OR,((RULE-SET,malware-ip),(RULE-SET,phishing-ip)),REJECT
+
+  - OR,((RULE-SET,apps),(RULE-SET,ir-apps)),DIRECT
+
+  - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
+  - OR,((RULE-SET,ir),(GEOIP,IR)),DIRECT
   #- GEOSITE,category-games,DIRECT ## Gaming
 
+  - NOT,((RULE-SET,ir)),global ## Avoids DNS pollution
   - GEOIP,private,DIRECT ## Loopback and LAN IPs
-  - GEOIP,IR,DIRECT
+
   - MATCH,global
