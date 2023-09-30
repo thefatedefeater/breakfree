@@ -91,7 +91,8 @@ proxy-providers:
 
   yebekhe:
     type: http
-    url: "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix"
+    url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
+    #url: "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix"
     #url: "https://cdn.jsdelivr.net/gh/yebekhe/TelegramV2rayCollector@main/sub/base64/mix"
     #url: "https://cdn.statically.io/gh/yebekhe/TelegramV2rayCollector/main/sub/base64/mix"
     interval: 86400
@@ -191,7 +192,7 @@ rules:
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
   - OR,((GEOSITE,cn),(GEOIP,CN)),DIRECT
 
-  - GEOSITE,geolocation-!cn,global ## Avoids DNS pollution
+  - GEOSITE,geolocation-!cn,global ## When all else failed, vote from the rooftops.
   - GEOIP,private,DIRECT ## Loopback and LAN IPs
 
   - MATCH,global
