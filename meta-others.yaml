@@ -202,6 +202,6 @@ rules:
 
 
 
-  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
+  - GEOIP,private,DIRECT ## Loopback and LAN IPs
 
   - MATCH,global

@@ -192,6 +192,6 @@ rules:
   - OR,((GEOSITE,cn),(GEOIP,CN)),DIRECT
 
   - GEOSITE,geolocation-!cn,global ## Avoids DNS pollution
-  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
+  - GEOIP,private,DIRECT ## Loopback and LAN IPs
 
   - MATCH,global

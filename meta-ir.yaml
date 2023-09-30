@@ -222,7 +222,7 @@ rules:
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
   - OR,((RULE-SET,ir),(GEOIP,IR)),DIRECT
 
-  - NOT,((RULE-SET,ir,no-resolve)),global ## Avoids DNS pollution
-  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
+  #- NOT,((RULE-SET,ir)),global ## Avoids DNS pollution
+  - GEOIP,private,DIRECT ## Loopback and LAN IPs
 
   - MATCH,global
