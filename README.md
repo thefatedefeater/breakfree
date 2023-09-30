@@ -9,7 +9,7 @@ Clash (and Meta) configurations for plug-n-play censorship circumvention, using 
 | Clash    | [Github](https://github.com/dreamacro/clash) <br> [Wiki & Clients](https://dreamacro.github.io/clash/) |
 | Clash Meta for Android | [Github](https://github.com/MetaCubeX/ClashMetaForAndroid/releases/latest) <br> [F-Droid](https://f-droid.org/en/packages/com.github.metacubex.clash.meta) <br> [Play Store](https://play.google.com/store/apps/details?id=com.github.metacubex.clash.meta) |
 | Clash for Android | [Github](https://github.com/Kr328/ClashForAndroid/releases/latest) <br> [F-Droid (IzzyOnDroid)](https://www.f-droid.org/packages/com.github.kr328.clash.foss) <br> [Play Store](https://play.google.com/store/apps/details?id=com.github.kr328.clash) |
-> Whenever in doubt about choosing the right one, choose Meta.
+> Whenever in doubt between Clash and Meta, choose Meta.
 
 ## ⚙️ Configs
 | TITLE | NOTES | URLs |
