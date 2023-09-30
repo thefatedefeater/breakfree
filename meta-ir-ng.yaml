@@ -1,0 +1,146 @@
+# License: AGPL-v3.0
+# Repository: https://github.com/demarcush/breakfree
+## Software: Clash Meta
+## Country: Iran Beta
+
+mixed-port: 7890
+allow-lan: false
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: always
+global-client-fingerprint: random
+geodata-mode: true
+mode: rule
+log-level: error ## silent/error/warning/info/debug
+ipv6: false
+external-controller: '127.0.0.1:9090'
+profile:
+  store-selected: false ## It's best to default to "auto" every time it restarts.
+  store-fake-ip: true
+
+ntp:
+  enable: true
+  write-to-system: false
+  server: pool.ntp.org
+
+geox-url:
+  geoip: "https://github.com/Chocolate4U/Iran-v2ray-rules/releases/latest/download/geoip.dat"
+  #geoip: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-v2ray-rules@releases/latest/download/geoip.dat"
+  geosite: "https://github.com/Chocolate4U/Iran-v2ray-rules/releases/latest/download/geosite.dat"
+  #geosite: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-v2ray-rules@releases/latest/download/geosite.dat"
+  mmdb: "https://github.com/Chocolate4U/Iran-clash-rules/releases/latest/download/geoip.metadb"
+  #mmdb: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@releases/latest/download/geoip.metadb"
+
+#tun:
+  #enable: true
+  #stack: system ## system/lwip/gvisor
+  #dns-hijack:
+    #- 'any:53'
+    #- "tcp://any:53"
+  #auto-route: true
+  #auto-redir: true
+  #auto-detect-interface: true
+
+dns:
+  enable: true
+  #listen: '127.0.0.1:53' ## Or 0.0.0.0:53 for LAN.
+  ipv6: true
+  prefer-h3: true
+  default-nameserver:
+    - '1.1.1.1'
+  enhanced-mode: fake-ip
+  use-hosts: true
+  nameserver:
+    - "https://1.1.1.1/dns-query" # MCI
+    - "https://8.8.8.8/dns-query" # MCI
+    - "https://sky.rethinkdns.com/dns-query" # MTN
+    - "https://snoke.meganerd.nl/dns-query" # MTN
+  fallback-filter:
+    geoip: false # TODO
+    geoip-code: IR
+
+proxy-groups:
+
+- name: global
+  type: select
+  proxies:
+    - auto
+    - manual
+    - DIRECT
+    - REJECT
+
+- name: manual
+  type: select
+  use:
+    #- local
+    - aggregator
+    - yebekhe
+
+- name: auto
+  type: url-test
+  #filter: "🏁|🚩"
+  use:
+    #- local
+    - aggregator
+    - yebekhe
+
+proxy-providers:
+
+  #local:
+    #type: file
+    #path: ./providers/local.yaml ## << Put your custom servers here. Clash.Meta also accepts ss://, vmess://, trojan:// and other URLs.
+    #health-check:
+      #enable: true
+      #interval: 3600
+      #lazy: true
+      #url: "https://cp.cloudflare.com"
+      ##url: "https://cdn.jsdelivr.net"
+      ##url: "https://detectportal.firefox.com/success.txt"
+
+  aggregator:
+    type: http
+    url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
+    #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
+    #url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
+    interval: 86400
+    path: ./providers/aggregator.yaml
+    health-check:
+      enable: true
+      interval: 3600
+      lazy: true
+      url: "https://cp.cloudflare.com"
+      #url: "https://cdn.jsdelivr.net"
+      #url: "https://detectportal.firefox.com/success.txt"
+
+  yebekhe:
+    type: http
+    url: "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix"
+    #url: "https://cdn.jsdelivr.net/gh/yebekhe/TelegramV2rayCollector@main/sub/base64/mix"
+    #url: "https://cdn.statically.io/gh/yebekhe/TelegramV2rayCollector/main/sub/base64/mix"
+    interval: 86400
+    path: ./providers/yebekhe.yaml
+    health-check:
+      enable: true
+      interval: 3600
+      lazy: true
+      url: "https://cp.cloudflare.com"
+      #url: "https://cdn.jsdelivr.net"
+      #url: "https://detectportal.firefox.com/success.txt"
+
+rules:
+  - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,malware,REJECT
+  - GEOSITE,phishing,REJECT
+  - GEOSITE,cryptominers,REJECT
+  #- GEOSITE,nsfw,REJECT ## Pornography and gambling
+  - GEOIP,malware,REJECT
+  - GEOIP,phishing,REJECT
+
+  - DOMAIN,d.metacubex.one,DIRECT ## Meta Dashboard
+  - DOMAIN,yacd.metacubex.one,DIRECT ## YACD for Clash Meta
+  - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
+  - GEOSITE,IR,DIRECT
+  - GEOIP,private,DIRECT
+  - GEOIP,IR,DIRECT
+
+  - MATCH,global
