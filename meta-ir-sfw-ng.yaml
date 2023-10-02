@@ -71,16 +71,16 @@ proxy-groups:
   type: select
   use:
     #- local
-    - aggregator
     - yebekhe
+    - aggregator
 
 - name: auto
   type: url-test
   #filter: "🏁|🚩"
   use:
     #- local
-    - aggregator
     - yebekhe
+    - aggregator
 
 proxy-providers:
 
@@ -92,8 +92,8 @@ proxy-providers:
       #interval: 3600
       #lazy: true
       #url: "https://cp.cloudflare.com"
-      ##url: "https://cdn.jsdelivr.net"
       ##url: "https://detectportal.firefox.com/success.txt"
+      ##url: "https://captive.apple.com"
 
   aggregator:
     type: http
@@ -107,8 +107,8 @@ proxy-providers:
       interval: 3600
       lazy: true
       url: "https://cp.cloudflare.com"
-      #url: "https://cdn.jsdelivr.net"
       #url: "https://detectportal.firefox.com/success.txt"
+      #url: "https://captive.apple.com"
 
   yebekhe:
     type: http
@@ -123,8 +123,8 @@ proxy-providers:
       interval: 3600
       lazy: true
       url: "https://cp.cloudflare.com"
-      #url: "https://cdn.jsdelivr.net"
       #url: "https://detectportal.firefox.com/success.txt"
+      #url: "https://captive.apple.com"
 
 rule-providers:
 
@@ -147,17 +147,20 @@ rule-providers:
     interval: 259200
 
 rules:
-  - OR,((GEOSITE,category-ads-all),(GEOSITE,malware),(GEOSITE,phishing),(GEOSITE,cryptominers)),REJECT
+  - GEOSITE,private,DIRECT ## Private Domains
+  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
+
+  - GEOSITE,category-ads-all,REJECT
+  - OR,((GEOSITE,malware),(GEOSITE,phishing),(GEOSITE,cryptominers)),REJECT
   - GEOSITE,nsfw,REJECT ## Pornography and gambling
 
-  - OR,((GEOIP,malware),(GEOIP,phishing)),REJECT
-
-  - OR,((RULE-SET,apps),(RULE-SET,ir-apps)),DIRECT
-
+  - OR,((RULE-SET,apps),(RULE-SET,ir-apps),(GEOSITE,ir)),DIRECT
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
-  - OR,((GEOSITE,ir),(GEOIP,IR)),DIRECT
+
 
   - GEOSITE,geolocation-!cn,global ## When all else failed, vote from the rooftops.
-  - GEOIP,private,DIRECT ## Loopback and LAN IPs
+
+  - OR,((GEOIP,malware),(GEOIP,phishing)),REJECT
+  - GEOIP,IR,DIRECT
 
   - MATCH,global

@@ -53,16 +53,16 @@ proxy-groups:
   type: select
   use:
     #- local
-    - aggregator
     - yebekhe
+    - aggregator
 
 - name: auto
   type: url-test
   #filter: "🏁|🚩"
   use:
     #- local
-    - aggregator
     - yebekhe
+    - aggregator
 
 proxy-providers:
 
@@ -74,8 +74,8 @@ proxy-providers:
       #interval: 3600
       #lazy: true
       #url: "https://cp.cloudflare.com"
-      ##url: "https://cdn.jsdelivr.net"
       ##url: "https://detectportal.firefox.com/success.txt"
+      ##url: "https://captive.apple.com"
 
   aggregator:
     type: http
@@ -89,8 +89,8 @@ proxy-providers:
       interval: 3600
       lazy: true
       url: "https://cp.cloudflare.com"
-      #url: "https://cdn.jsdelivr.net"
       #url: "https://detectportal.firefox.com/success.txt"
+      #url: "https://captive.apple.com"
 
   yebekhe:
     type: http
@@ -103,13 +103,29 @@ proxy-providers:
       interval: 3600
       lazy: true
       url: "https://cp.cloudflare.com"
-      #url: "https://cdn.jsdelivr.net"
       #url: "https://detectportal.firefox.com/success.txt"
+      #url: "https://captive.apple.com"
 
 rules:
+  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
+
   - DOMAIN-SUFFIX,cn,DIRECT
-  - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
+  - DOMAIN-SUFFIX,citic,DIRECT
+  - DOMAIN-SUFFIX,baidu,DIRECT
+  - DOMAIN-SUFFIX,unicom,DIRECT
+  - DOMAIN-SUFFIX,sohu,DIRECT
+  - DOMAIN-SUFFIX,xn--fiqs8s,DIRECT
+  - DOMAIN-SUFFIX,xn--fiqz9s,DIRECT
+  - DOMAIN-SUFFIX,xn--1qqw23a,DIRECT
+  - DOMAIN-SUFFIX,xn--xhq521b,DIRECT
+  - DOMAIN-SUFFIX,xn--8y0a063a,DIRECT
+  - DOMAIN-SUFFIX,xn--6frz82g,DIRECT
+  - DOMAIN-SUFFIX,xn--fiq64b,DIRECT
+  - DOMAIN-SUFFIX,xn--estv75g,DIRECT
+  - DOMAIN-SUFFIX,xn--vuq861b,DIRECT
+  - DOMAIN-SUFFIX,xn--zfr164b,DIRECT
+
+  - DOMAIN-SUFFIX,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
 
   - GEOIP,CN,DIRECT
-  - GEOIP,private,DIRECT ## Loopback and LAN IPs
   - MATCH,global

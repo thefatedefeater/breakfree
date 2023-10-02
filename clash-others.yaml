@@ -49,16 +49,16 @@ proxy-groups:
   type: select
   use:
     #- local
-    - aggregator
     - yebekhe
+    - aggregator
 
 - name: auto
   type: url-test
   #filter: "🏁|🚩"
   use:
     #- local
-    - aggregator
     - yebekhe
+    - aggregator
 
 proxy-providers:
 
@@ -70,8 +70,8 @@ proxy-providers:
       #interval: 3600
       #lazy: true
       #url: "https://cp.cloudflare.com"
-      ##url: "https://cdn.jsdelivr.net"
       ##url: "https://detectportal.firefox.com/success.txt"
+      ##url: "https://captive.apple.com"
 
   aggregator:
     type: http
@@ -85,8 +85,8 @@ proxy-providers:
       interval: 3600
       lazy: true
       url: "https://cp.cloudflare.com"
-      #url: "https://cdn.jsdelivr.net"
       #url: "https://detectportal.firefox.com/success.txt"
+      #url: "https://captive.apple.com"
 
   yebekhe:
     type: http
@@ -99,11 +99,12 @@ proxy-providers:
       interval: 3600
       lazy: true
       url: "https://cp.cloudflare.com"
-      #url: "https://cdn.jsdelivr.net"
       #url: "https://detectportal.firefox.com/success.txt"
+      #url: "https://captive.apple.com"
 
 rules:
+  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
+
   - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
 
-  - GEOIP,private,DIRECT ## Loopback and LAN IPs
   - MATCH,global
