@@ -105,6 +105,6 @@ proxy-providers:
 rules:
   - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
 
-  - DOMAIN,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
+  - DOMAIN-SUFFIX,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
 
   - MATCH,global
