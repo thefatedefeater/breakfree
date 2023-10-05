@@ -1,7 +1,7 @@
 # 🆓 Break Free!
 Clash (and Meta) configurations for plug-n-play censorship circumvention, using freely available sources  
 [سند فارسی 🇮🇷](README_fa.md)  
-👥 [Telegram Group](https://t.me/BreakRealFree)
+👥 [Telegram](https://t.me/BreakRealFree)
 
 ## 🏁 Softwares
 | Software | Homepage |
