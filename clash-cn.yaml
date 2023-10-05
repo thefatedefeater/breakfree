@@ -24,24 +24,23 @@ profile:
   #auto-detect-interface: true
 
 dns:
-  enable: true # TODO: Please report functional unfiltered DoH servers from China.
+  enable: true
   #listen: '127.0.0.1:53' ## Or 0.0.0.0:53 for LAN.
   ipv6: true
   enhanced-mode: fake-ip
   use-hosts: true
   nameserver:
-    - '114.114.114.114'
-  fallback:
-    - "https://1.1.1.1/dns-query"
-    - "https://8.8.8.8/dns-query"
-    - "https://9.9.9.9/dns-query"
+    - "https://1.0.0.1/dns-query"
+    - "https://8.8.4.4/dns-query"
+    - "https://149.112.112.112/dns-query"
+  nameserver-policy:
+    "+.cn,+.citic,+.baidu,+.unicom,+.sohu,+.xn--fiqs8s,+.xn--fiqz9s,+.xn--1qqw23a,+.xn--xhq521b,+.xn--8y0a063a,+.xn--6frz82g,+.xn--fiq64b,+.xn--estv75g,+.xn--vuq861b,+.xn--zfr164b": "https://223.5.5.5/dns-query"
   fallback-filter:
-    geoip: true
-    geoip-code: CN
+    geoip: false
 
 proxy-groups:
 
-- name: global
+- name: default
   type: select
   proxies:
     - auto
@@ -53,16 +52,16 @@ proxy-groups:
   type: select
   use:
     #- local
-    - yebekhe
     - aggregator
+    - yebekhe
 
 - name: auto
   type: url-test
   #filter: "🏁|🚩"
   use:
     #- local
-    - yebekhe
     - aggregator
+    - yebekhe
 
 proxy-providers:
 
@@ -71,7 +70,7 @@ proxy-providers:
     #path: ./providers/local.yaml ## << Put your custom servers here.
     #health-check:
       #enable: true
-      #interval: 3600
+      #interval: 21600
       #lazy: true
       #url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
@@ -86,7 +85,7 @@ proxy-providers:
     path: ./providers/aggregator.yaml
     health-check:
       enable: true
-      interval: 3600
+      interval: 21600
       lazy: true
       url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
@@ -95,12 +94,12 @@ proxy-providers:
   yebekhe:
     type: http
     url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
-    #url: "https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&filename=yebekhe.yaml&list=true&sort=true&emoji=false&append_type=false"
+    #url: "https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&list=true&sort=true&emoji=false&append_type=false"
     interval: 86400
     path: ./providers/yebekhe.yaml
     health-check:
       enable: true
-      interval: 3600
+      interval: 21600
       lazy: true
       url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
@@ -127,5 +126,5 @@ rules:
 
   - DOMAIN-SUFFIX,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
 
-  - GEOIP,CN,DIRECT
-  - MATCH,global
+  - GEOIP,cn,DIRECT
+  - MATCH,default

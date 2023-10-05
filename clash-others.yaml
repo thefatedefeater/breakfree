@@ -30,14 +30,14 @@ dns:
   enhanced-mode: fake-ip
   use-hosts: true
   nameserver:
-    - "https://1.1.1.1/dns-query"
-    - "https://8.8.8.8/dns-query"
+    - "https://1.0.0.1/dns-query"
+    - "https://8.8.4.4/dns-query"
   fallback-filter:
     geoip: false
 
 proxy-groups:
 
-- name: global
+- name: default
   type: select
   proxies:
     - auto
@@ -49,16 +49,16 @@ proxy-groups:
   type: select
   use:
     #- local
-    - yebekhe
     - aggregator
+    - yebekhe
 
 - name: auto
   type: url-test
   #filter: "🏁|🚩"
   use:
     #- local
-    - yebekhe
     - aggregator
+    - yebekhe
 
 proxy-providers:
 
@@ -67,7 +67,7 @@ proxy-providers:
     #path: ./providers/local.yaml ## << Put your custom servers here.
     #health-check:
       #enable: true
-      #interval: 3600
+      #interval: 21600
       #lazy: true
       #url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
@@ -82,7 +82,7 @@ proxy-providers:
     path: ./providers/aggregator.yaml
     health-check:
       enable: true
-      interval: 3600
+      interval: 21600
       lazy: true
       url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
@@ -91,12 +91,12 @@ proxy-providers:
   yebekhe:
     type: http
     url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
-    #url: "https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&filename=yebekhe.yaml&list=true&sort=true&emoji=false&append_type=false"
+    #url: "https://api.wcc.best/sub?target=clash&url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&list=true&sort=true&emoji=false&append_type=false"
     interval: 86400
     path: ./providers/yebekhe.yaml
     health-check:
       enable: true
-      interval: 3600
+      interval: 21600
       lazy: true
       url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
@@ -107,4 +107,4 @@ rules:
 
   - DOMAIN-SUFFIX,yacd.haishan.me,DIRECT ## Yet Another Clash Dashboard
 
-  - MATCH,global
+  - MATCH,default

@@ -40,18 +40,21 @@ dns:
   prefer-h3: true
   enhanced-mode: fake-ip
   use-hosts: true
+  proxy-server-nameserver:
+    - "https://pro.shecan.ir/dns-query"
   nameserver:
-    - "https://1.1.1.1/dns-query" # MCI
-    - "https://8.8.8.8/dns-query" # MCI
-    - "https://max.rethinkdns.com/dns-query" # MTN
-    - "https://snoke.meganerd.nl/dns-query" # MTN
+    - "https://1.0.0.1/dns-query#default"
+    - "https://8.8.4.4/dns-query#default"
+  nameserver-policy:
+    "geosite:private,category-ir": "https://pro.shecan.ir/dns-query"
+    "rule-set:ir": "https://pro.shecan.ir/dns-query"
+    "rule-set:ir-apps,apps": "https://pro.shecan.ir/dns-query"
   fallback-filter:
-    geoip: false # TODO
-    geoip-code: IR
+    geoip: false
 
 proxy-groups:
 
-- name: global
+- name: default
   type: select
   proxies:
     - auto
@@ -63,25 +66,26 @@ proxy-groups:
   type: select
   use:
     #- local
-    - yebekhe
     - aggregator
+    - yebekhe
 
 - name: auto
   type: url-test
   #filter: "🏁|🚩"
+  exclude-filter: "🇮🇱|🇹🇷|🇮🇷|🇨🇳|🇷🇺|🇧🇾|🇰🇿" ## Remember: No Russian.
   use:
     #- local
-    - yebekhe
     - aggregator
+    - yebekhe
 
 proxy-providers:
 
   #local:
     #type: file
-    #path: ./providers/local.yaml ## << Put your custom servers here. Clash.Meta also accepts ss://, vmess://, trojan:// and other URLs.
+    #path: ./providers/local.yaml ## << Put your custom servers here. Meta also accepts base64-encoded and v2ray URIs.
     #health-check:
       #enable: true
-      #interval: 3600
+      #interval: 21600
       #lazy: true
       #url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
@@ -89,14 +93,15 @@ proxy-providers:
 
   aggregator:
     type: http
-    url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
-    #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
-    #url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
+    url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt"
+    #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_base64.txt"
+    #url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt"
     interval: 86400
     path: ./providers/aggregator.yaml
+    exclude-type: "http|socks5"
     health-check:
       enable: true
-      interval: 3600
+      interval: 21600
       lazy: true
       url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
@@ -110,9 +115,10 @@ proxy-providers:
     #url: "https://cdn.statically.io/gh/yebekhe/TelegramV2rayCollector/main/sub/base64/mix"
     interval: 86400
     path: ./providers/yebekhe.yaml
+    exclude-type: "http|socks5"
     health-check:
       enable: true
-      interval: 3600
+      interval: 21600
       lazy: true
       url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
@@ -211,20 +217,19 @@ rule-providers:
     interval: 259200
 
 rules:
-  - GEOSITE,private,DIRECT ## Private Domains
-  - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
+  - OR,((GEOSITE,private),(GEOIP,private,no-resolve)),DIRECT
 
-  - OR,((GEOSITE,category-ads-all),(RULE-SET,category-ads-all)),REJECT
-  - OR,((RULE-SET,malware),(RULE-SET,phishing),(RULE-SET,cryptominers),(GEOSITE,win-spy)),REJECT
+  - OR,((GEOSITE,category-ads-all),(GEOSITE,win-spy)),REJECT
+  - OR,((RULE-SET,category-ads-all),(RULE-SET,malware),(RULE-SET,phishing),(RULE-SET,cryptominers)),REJECT
   #- OR,((GEOSITE,category-porn),(RULE-SET,nsfw)),REJECT ## Pornography and gambling
 
   - OR,((RULE-SET,apps),(RULE-SET,ir-apps),(GEOSITE,category-ir),(RULE-SET,ir)),DIRECT
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
   #- GEOSITE,category-games,DIRECT ## Gaming
 
-  - GEOSITE,geolocation-!cn,global ## When all else failed, vote from the rooftops.
+  - OR,((GEOSITE,gfw),(GEOSITE,geolocation-!cn)),default ## When all else failed, vote from the rooftops.
 
   - OR,((RULE-SET,malware-ip),(RULE-SET,phishing-ip)),REJECT
-  - GEOIP,IR,DIRECT
+  - GEOIP,ir,DIRECT
 
-  - MATCH,global
+  - MATCH,default
