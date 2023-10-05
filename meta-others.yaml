@@ -47,7 +47,6 @@ dns:
     - "https://8.8.4.4/dns-query#default"
   nameserver-policy:
     "geosite:private": "https://1.0.0.1/dns-query"
-    "rule-set:apps": "https://1.0.0.1/dns-query"
   fallback-filter:
     geoip: false
 
@@ -92,9 +91,9 @@ proxy-providers:
 
   aggregator:
     type: http
-    url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt"
+    #url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt"
     #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_base64.txt"
-    #url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt"
+    url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt"
     interval: 86400
     path: ./providers/aggregator.yaml
     exclude-type: "http|socks5"
@@ -129,8 +128,9 @@ rule-providers:
     type: http
     format: text
     behavior: domain
-    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/nsfw.txt"
+    #url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/nsfw.txt"
     #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/nsfw.txt"
+    url: "https://cdn.statically.io/gh/chocolate4u/Iran-clash-rules@release/nsfw.txt"
     path: ./ruleset/nsfw.txt
     interval: 259200
 
@@ -138,8 +138,9 @@ rule-providers:
     type: http
     format: text
     behavior: domain
-    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/category-ads-all.txt"
+    #url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/category-ads-all.txt"
     #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/category-ads-all.txt"
+    url: "https://cdn.statically.io/gh/chocolate4u/Iran-clash-rules@release/category-ads-all.txt"
     path: ./ruleset/category-ads-all.txt
     interval: 259200
 
@@ -147,8 +148,9 @@ rule-providers:
     type: http
     format: text
     behavior: domain
-    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/malware.txt"
+    #url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/malware.txt"
     #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/malware.txt"
+    url: "https://cdn.statically.io/gh/chocolate4u/Iran-clash-rules@release/malware.txt"
     path: ./ruleset/malware.txt
     interval: 259200
 
@@ -156,8 +158,9 @@ rule-providers:
     type: http
     format: text
     behavior: domain
-    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/phishing.txt"
+    #url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/phishing.txt"
     #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/phishing.txt"
+    url: "https://cdn.statically.io/gh/chocolate4u/Iran-clash-rules@release/phishing.txt"
     path: ./ruleset/phishing.txt
     interval: 259200
 
@@ -165,8 +168,9 @@ rule-providers:
     type: http
     format: text
     behavior: domain
-    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/cryptominers.txt"
+    #url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/cryptominers.txt"
     #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/cryptominers.txt"
+    url: "https://cdn.statically.io/gh/chocolate4u/Iran-clash-rules@release/cryptominers.txt"
     path: ./ruleset/cryptominers.txt
     interval: 259200
 
@@ -174,8 +178,9 @@ rule-providers:
     type: http
     format: text
     behavior: ipcidr
-    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/malware-ip.txt"
+    #url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/malware-ip.txt"
     #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/malware-ip.txt"
+    url: "https://cdn.statically.io/gh/chocolate4u/Iran-clash-rules@release/malware-ip.txt"
     path: ./ruleset/malware-ip.txt
     interval: 259200
 
@@ -183,8 +188,9 @@ rule-providers:
     type: http
     format: text
     behavior: ipcidr
-    url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/phishing-ip.txt"
+    #url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/phishing-ip.txt"
     #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/phishing-ip.txt"
+    url: "https://cdn.statically.io/gh/chocolate4u/Iran-clash-rules@release/phishing-ip.txt"
     path: ./ruleset/phishing-ip.txt
     interval: 259200
 
@@ -192,8 +198,9 @@ rule-providers:
     type: http
     format: yaml
     behavior: classical
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
+    #url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
     #url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    url: "https://cdn.statically.io/gh/Loyalsoldier/clash-rules@release/applications.txt"
     path: ./ruleset/apps.yaml
     interval: 259200
 
