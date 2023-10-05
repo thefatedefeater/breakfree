@@ -70,7 +70,7 @@ proxy-groups:
 - name: auto
   type: url-test
   #filter: "🏁|🚩"
-  exclude-filter: "🇮🇱|🇹🇷|🇮🇷|🇨🇳|🇷🇺|🇧🇾|🇰🇿" ## Remember: No Russian.
+  exclude-filter: "🇦🇲|🇬🇷|🇦🇿|🇮🇱|🇹🇷|🇮🇷|🇨🇳|🇷🇺|🇧🇾|🇰🇿" ## Remember: No Russian.
   use:
     #- local
     - aggregator
