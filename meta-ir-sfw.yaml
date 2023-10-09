@@ -1,4 +1,5 @@
-# License: AGPL-v3.0
+# Copyright (C) 2023 demarcush
+# License: AGPL-3.0-or-later (https://www.gnu.org/licenses/agpl.txt)
 # Repository: https://github.com/demarcush/breakfree
 ## Software: Clash Meta
 ## Country: Iran (Safe for Work)
@@ -14,6 +15,10 @@ mode: rule
 log-level: error ## silent/error/warning/info/debug
 ipv6: false
 external-controller: '127.0.0.1:9090'
+external-ui-name: yacd ## yacd/xd
+external-ui: ./ui/
+external-ui-url: "https://github.com/haishanh/yacd/archive/refs/heads/gh-pages.zip"
+#external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 profile:
   store-selected: false ## It's best to default to "auto" every time it restarts.
   store-fake-ip: true
@@ -40,11 +45,14 @@ dns:
   prefer-h3: true
   enhanced-mode: fake-ip
   use-hosts: true
+  default-nameserver:
+    - system
+    - '127.0.0.1'
+    - '1.0.0.1'
   proxy-server-nameserver:
     - "https://pro.shecan.ir/dns-query"
   nameserver:
     - "https://1.0.0.1/dns-query#default"
-    - "https://8.8.4.4/dns-query#default"
   nameserver-policy:
     "geosite:private,category-ir": "https://pro.shecan.ir/dns-query"
     "rule-set:ir": "https://pro.shecan.ir/dns-query"
@@ -71,7 +79,7 @@ proxy-groups:
 - name: auto
   type: url-test
   #filter: "🏁|🚩"
-  exclude-filter: "🇦🇲|🇬🇷|🇦🇿|🇮🇱|🇹🇷|🇮🇷|🇨🇳|🇷🇺|🇧🇾|🇰🇿" ## Remember: No Russian.
+  exclude-filter: "🇲🇺|🇦🇲|🇬🇷|🇦🇿|🇮🇱|🇹🇷|🇮🇷|🇨🇳|🇷🇺|🇧🇾|🇰🇿" ## Remember: No Russian.
   use:
     #- local
     - aggregator
@@ -94,7 +102,7 @@ proxy-providers:
     type: http
     #url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt"
     #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_base64.txt"
-    url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt"
+    url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_base64.txt"
     interval: 86400
     path: ./providers/aggregator.yaml
     exclude-type: "http|socks5"
@@ -111,7 +119,7 @@ proxy-providers:
     url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
     #url: "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix"
     #url: "https://cdn.jsdelivr.net/gh/yebekhe/TelegramV2rayCollector@main/sub/base64/mix"
-    #url: "https://cdn.statically.io/gh/yebekhe/TelegramV2rayCollector/main/sub/base64/mix"
+    #url: "https://cdn.statically.io/gh/yebekhe/TelegramV2rayCollector@main/sub/base64/mix"
     interval: 86400
     path: ./providers/yebekhe.yaml
     exclude-type: "http|socks5"
