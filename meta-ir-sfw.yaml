@@ -240,7 +240,7 @@ rules:
   - OR,((RULE-SET,category-ads-all),(RULE-SET,malware),(RULE-SET,phishing),(RULE-SET,cryptominers)),REJECT
   - OR,((GEOSITE,category-porn),(RULE-SET,nsfw)),REJECT ## Pornography and gambling
 
-  - OR,((RULE-SET,apps),(RULE-SET,ir-apps),(GEOSITE,category-ir),(RULE-SET,ir)),DIRECT
+  - OR,((RULE-SET,ir-apps),(GEOSITE,category-ir),(RULE-SET,ir)),DIRECT
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
   #- GEOSITE,category-games,DIRECT ## Gaming
 
@@ -248,5 +248,7 @@ rules:
 
   - OR,((RULE-SET,malware-ip),(RULE-SET,phishing-ip)),REJECT
   - GEOIP,ir,DIRECT
+  - GEOIP,il,default
 
+  - RULE-SET,apps,DIRECT
   - MATCH,default
