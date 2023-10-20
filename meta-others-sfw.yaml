@@ -15,10 +15,6 @@ mode: rule
 log-level: error ## silent/error/warning/info/debug
 ipv6: false
 external-controller: '127.0.0.1:9090'
-external-ui-name: yacd ## yacd/xd
-external-ui: ./ui/
-external-ui-url: "https://github.com/haishanh/yacd/archive/refs/heads/gh-pages.zip"
-#external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 profile:
   store-selected: false ## It's best to default to "auto" every time it restarts.
   store-fake-ip: true

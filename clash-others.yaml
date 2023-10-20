@@ -10,7 +10,6 @@ mode: rule
 log-level: error ## silent/error/warning/info/debug
 ipv6: false
 external-controller: '127.0.0.1:9090'
-external-ui: ./ui/
 profile:
   store-selected: false ## It's best to default to "auto" every time it restarts.
   store-fake-ip: true
