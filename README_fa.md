@@ -10,6 +10,7 @@
 | کلش    | [Github](https://github.com/dreamacro/clash) <br> [Wiki & Clients](https://dreamacro.github.io/clash/) |
 | کلش متا برای اندروید | [Github](https://github.com/MetaCubeX/ClashMetaForAndroid/releases/latest) <br> [F-Droid](https://f-droid.org/en/packages/com.github.metacubex.clash.meta) <br> [Play Store](https://play.google.com/store/apps/details?id=com.github.metacubex.clash.meta) |
 | کلش برای اندروید | [Github](https://github.com/Kr328/ClashForAndroid/releases/latest) <br> [F-Droid (IzzyOnDroid)](https://www.f-droid.org/packages/com.github.kr328.clash.foss) <br> [Play Store](https://play.google.com/store/apps/details?id=com.github.kr328.clash) |
+> **Note**
 > در صورت وجود شک در انتخاب نرم‌افزار، متا را انتخاب کنید.
 
 ## ⚙️ کانفیگ‌ها
@@ -24,6 +25,7 @@
 | کلش ایران 🇮🇷 | 🌐 [فرادامنه‌های ایران](https://en.wikipedia.org/wiki/.ir) [^3] <br> 🌐 آی‌پی‌های ایران <br> 🛡️ باقی مانده | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/clash-ir.yaml) <br> [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/clash-ir.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/clash-ir.yaml) |
 | کلش چین 🇨🇳 | 🌐 [فرادامنه‌های چین](https://github.com/v2fly/domain-list-community/blob/master/data/tld-cn) [^3] <br> 🌐 آی‌پی‌های چین <br> 🛡️ باقی مانده | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/clash-cn.yaml) <br> [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/clash-cn.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/clash-cn.yaml) |
 | کلش دیگران 🌏 [^2] | 🛡️ همه چیز | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/clash-others.yaml) <br> [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/clash-others.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/clash-others.yaml) |
+> **Note**
 > ❌: مسدود <br> 🌐: اتصال مستقیم <br> 🛡️: پروکسی‌شده
 
 ## 🦮 آموزش استفاده
