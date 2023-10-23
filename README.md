@@ -10,6 +10,7 @@ Clash (and Meta) configurations for plug-n-play censorship circumvention, using 
 | Clash    | [Github](https://github.com/dreamacro/clash) <br> [Wiki & Clients](https://dreamacro.github.io/clash/) |
 | Clash Meta for Android | [Github](https://github.com/MetaCubeX/ClashMetaForAndroid/releases/latest) <br> [F-Droid](https://f-droid.org/en/packages/com.github.metacubex.clash.meta) <br> [Play Store](https://play.google.com/store/apps/details?id=com.github.metacubex.clash.meta) |
 | Clash for Android | [Github](https://github.com/Kr328/ClashForAndroid/releases/latest) <br> [F-Droid (IzzyOnDroid)](https://www.f-droid.org/packages/com.github.kr328.clash.foss) <br> [Play Store](https://play.google.com/store/apps/details?id=com.github.kr328.clash) |
+> **Note**
 > Whenever in doubt between Clash and Meta, choose Meta.
 
 ## ⚙️ Configs
@@ -24,6 +25,7 @@ Clash (and Meta) configurations for plug-n-play censorship circumvention, using 
 | Clash Iran 🇮🇷 | 🌐 [Iran TLDs](https://en.wikipedia.org/wiki/.ir) [^3] <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/clash-ir.yaml) <br> [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/clash-ir.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/clash-ir.yaml) |
 | Clash China 🇨🇳 | 🌐 [China TLDs](https://github.com/v2fly/domain-list-community/blob/master/data/tld-cn) [^3] <br> 🌐 China IPs <br> 🛡️ Anything Else | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/clash-cn.yaml) <br> [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/clash-cn.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/clash-cn.yaml) |
 | Clash Others 🌏 [^2] | 🛡️ Anything | [Github Raw](https://raw.githubusercontent.com/demarcush/breakfree/master/clash-others.yaml) <br> [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/clash-others.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/clash-others.yaml) |
+> **Note**
 > ❌: Blocked <br> 🌐: Direct Connection <br> 🛡️: Proxied
 
 ## 🦮 Tutorials
