@@ -1,5 +1,5 @@
 # 🆓 Break Free!
-Clash (and Meta) configurations for plug-n-play censorship circumvention, using freely available sources  
+Clash (and Meta) configurations for plug-n-play usage, using freely available sources  
 [سند فارسی 🇮🇷](README_fa.md)  
 👥 [Telegram](https://t.me/BreakRealFree)
 
@@ -12,6 +12,12 @@ Clash (and Meta) configurations for plug-n-play censorship circumvention, using 
 | Clash for Android | [Github](https://github.com/Kr328/ClashForAndroid/releases/latest) <br> [F-Droid (IzzyOnDroid)](https://www.f-droid.org/packages/com.github.kr328.clash.foss) <br> [Play Store](https://play.google.com/store/apps/details?id=com.github.kr328.clash) |
 > **Note**
 > Whenever in doubt between Clash and Meta, choose Meta.
+
+## ⚠️ Disclaimer
+This repository is not affiliated, associated, authorized, endorsed by, or in any way officially connected to any of the resources, websites, people, services or entities in its source code and is solely for educational purposes in the field of computers and networks, designed using resources already freely available on the Internet. Any illegal use is not approved!  
+While making every effort to provide a template of Clash and Clash Meta configuration files to make the most secure connection available, this repository, as acknowledged by the AGPL license, is provided as-is, WITHOUT ANY GUARANTEES OF COMPLETENESS, CORRECTNESS, ACCURACY, SUITABILITY, RESPONSIBILITY, RELIABILITY OR AVAILABILITY AND WE ARE NOT RESPONSIBLE FOR ANY USE OF IT.  
+*If you are a person at risk or want guarantees about the security of your connection, your use of this repository is not approved. Please consult an expert before using any software (not just this repository).*
+
 
 ## ⚙️ Configs
 | TITLE | NOTES | URLs |
@@ -51,5 +57,5 @@ For contribution to this project, you can:
 - And others who made this possible. Thank you! ❤️
 
 [^1]: Safe for Work: Equipped with pornography and gambling blocker
-[^2]: Others 🌏: Every connection not blocked will be proxied (Not recommended for heavily-censored countries e.g. Iran, China, Russia, etc.)
+[^2]: Others 🌏: Every connection not blocked will be proxied (Not recommended for countries like Iran, China, Russia, etc.)
 [^3]: Not including domains hosted in your country that have .com, .org, etc. TLDs. For Iran that's ~30k unique domains

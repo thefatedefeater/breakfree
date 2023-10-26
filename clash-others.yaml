@@ -54,7 +54,7 @@ proxy-groups:
     - yebekhe
 
 - name: auto
-  type: url-test
+  type: fallback
   #filter: "🏁|🚩"
   use:
     #- local
