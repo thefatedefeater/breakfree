@@ -42,7 +42,6 @@ dns:
   enhanced-mode: fake-ip
   use-hosts: true
   default-nameserver:
-    - system
     - '127.0.0.1'
     - '1.0.0.1'
   proxy-server-nameserver:
