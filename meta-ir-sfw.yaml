@@ -68,17 +68,17 @@ proxy-groups:
   type: select
   use:
     #- local
+    - soroush
     - aggregator
-    - yebekhe
 
 - name: auto
   type: fallback
-  #filter: "🏁|🚩"
-  exclude-filter: "🇲🇺|🇦🇲|🇬🇷|🇦🇿|🇮🇱|🇹🇷|🇮🇷|🇨🇳|🇷🇺|🇧🇾|🇰🇿" ## Remember: No Russian.
+  #filter: "🏁|🏴‍☠️"
+  exclude-filter: "🇮🇱|🇦🇲|🇦🇿|🇹🇷|🇧🇾|🇰🇿|🇷🇺|🇨🇳|🇮🇷" ## Remember: No Russian.
   use:
     #- local
+    - soroush
     - aggregator
-    - yebekhe
 
 proxy-providers:
 
@@ -109,14 +109,12 @@ proxy-providers:
       #url: "https://detectportal.firefox.com/success.txt"
       #url: "https://captive.apple.com"
 
-  yebekhe:
+  soroush:
     type: http
-    url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
-    #url: "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix"
-    #url: "https://cdn.jsdelivr.net/gh/yebekhe/TelegramV2rayCollector@main/sub/base64/mix"
-    #url: "https://cdn.statically.io/gh/yebekhe/TelegramV2rayCollector@main/sub/base64/mix"
+    url: "https://api.sublink.dev/sub?target=clash&url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&emoji=false&list=true&fdn=true"
+    #url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&type=clash&process=full"
     interval: 86400
-    path: ./providers/yebekhe.yaml
+    path: ./providers/soroush.yaml
     exclude-type: "http|socks5"
     health-check:
       enable: true

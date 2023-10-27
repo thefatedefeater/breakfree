@@ -50,10 +50,12 @@ For contribution to this project, you can:
 - [Clash](https://github.com/Dreamacro/clash)
 - [MetaCubeX](https://github.com/MetaCubeX)
 - [mahdibland/V2RayAggregator](https://github.com/mahdibland/V2RayAggregator)
+- [soroushmirzaei/telegram-configs-collector](https://github.com/soroushmirzaei/telegram-configs-collector)
 - [yebekhe/TelegramV2rayCollector](https://github.com/yebekhe/TelegramV2rayCollector)
 - [MasterKia/PersianBlocker](https://github.com/MasterKia/PersianBlocker)
 - [bootmortis/iran-hosted-domains](https://github.com/bootmortis/iran-hosted-domains)
 - [Chocolate4U](https://github.com/Chocolate4U)
+- [CareyWang/sub-web](https://github.com/CareyWang/sub-web)
 - And others who made this possible. Thank you! ❤️
 
 [^1]: Safe for Work: Equipped with pornography and gambling blocker
