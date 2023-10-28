@@ -57,7 +57,7 @@ proxy-groups:
     - aggregator
 
 - name: auto
-  type: fallback
+  type: url-test
   #filter: "🏁|🏴‍☠️"
   use:
     #- local

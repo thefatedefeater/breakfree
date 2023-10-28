@@ -72,7 +72,7 @@ proxy-groups:
     - aggregator
 
 - name: auto
-  type: fallback
+  type: url-test
   #filter: "🏁|🏴‍☠️"
   exclude-filter: "🇮🇱|🇦🇲|🇦🇿|🇹🇷|🇧🇾|🇰🇿|🇷🇺|🇨🇳|🇮🇷" ## Remember: No Russian.
   use:
