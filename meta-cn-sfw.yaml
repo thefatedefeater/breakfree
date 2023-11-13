@@ -70,7 +70,8 @@ proxy-groups:
     - aggregator
 
 - name: auto
-  type: fallback
+  type: url-test
+  tolerance: 1000
   url: "https://cp.cloudflare.com/"
   interval: 21600
   #filter: "🏁|🏴‍☠️"
