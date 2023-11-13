@@ -14,15 +14,14 @@ profile:
   store-selected: false ## It's best to default to "auto" every time it restarts.
   store-fake-ip: true
 
-#tun:
-  #enable: true
-  #stack: system ## system/gvisor
-  #dns-hijack:
-    #- 'any:53'
-    #- "tcp://any:53"
-  #auto-route: true
-  #auto-redir: true
-  #auto-detect-interface: true
+tun:
+  enable: false
+  stack: gvisor ## system/gvisor
+  dns-hijack:
+    - 'any:53'
+    - "tcp://any:53"
+  auto-route: true
+  auto-detect-interface: true
 
 dns:
   enable: true
@@ -53,15 +52,17 @@ proxy-groups:
   type: select
   use:
     #- local
-    - soroush
+    #- soroush
     - aggregator
 
 - name: auto
-  type: url-test
+  type: fallback
+  url: "https://cp.cloudflare.com/"
+  interval: 21600
   #filter: "🏁|🏴‍☠️"
   use:
     #- local
-    - soroush
+    #- soroush
     - aggregator
 
 proxy-providers:
@@ -73,9 +74,9 @@ proxy-providers:
       #enable: true
       #interval: 21600
       #lazy: true
-      #url: "https://cp.cloudflare.com"
+      #url: "https://cp.cloudflare.com/"
       ##url: "https://detectportal.firefox.com/success.txt"
-      ##url: "https://captive.apple.com"
+      ##url: "https://captive.apple.com/"
 
   aggregator:
     type: http
@@ -88,25 +89,26 @@ proxy-providers:
       enable: true
       interval: 21600
       lazy: true
-      url: "https://cp.cloudflare.com"
+      url: "https://cp.cloudflare.com/"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+      #url: "https://captive.apple.com/"
 
-  soroush:
-    type: http
-    url: "https://api.sublink.dev/sub?target=clash&url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&emoji=false&list=true&fdn=true"
-    #url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&type=clash&process=full"
-    interval: 86400
-    path: ./providers/soroush.yaml
-    health-check:
-      enable: true
-      interval: 21600
-      lazy: true
-      url: "https://cp.cloudflare.com"
-      #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+  #soroush:
+    #type: http
+    #url: "https://api.sublink.dev/sub?target=clash&url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&emoji=false&list=true&fdn=true"
+    ##url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&type=clash&process=full"
+    #interval: 86400
+    #path: ./providers/soroush.yaml
+    #health-check:
+      #enable: true
+      #interval: 21600
+      #lazy: true
+      #url: "https://cp.cloudflare.com/"
+      ##url: "https://detectportal.firefox.com/success.txt"
+      ##url: "https://captive.apple.com/"
 
 rules:
+  #- PROCESS-NAME,dnscrypt-proxy,DIRECT
   - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
 
   - DOMAIN-SUFFIX,cn,DIRECT

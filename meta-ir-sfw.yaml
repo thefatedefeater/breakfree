@@ -24,15 +24,14 @@ ntp:
   write-to-system: false
   server: pool.ntp.org
 
-#tun:
-  #enable: true
-  #stack: system ## system/lwip/gvisor
-  #dns-hijack:
-    #- 'any:53'
-    #- "tcp://any:53"
-  #auto-route: true
-  #auto-redir: true
-  #auto-detect-interface: true
+tun:
+  enable: false
+  stack: gvisor ## system/lwip/gvisor
+  dns-hijack:
+    - 'any:53'
+    - "tcp://any:53"
+  auto-route: true
+  auto-detect-interface: true
 
 dns:
   enable: true
@@ -72,7 +71,9 @@ proxy-groups:
     - aggregator
 
 - name: auto
-  type: url-test
+  type: fallback
+  url: "https://cp.cloudflare.com/"
+  interval: 21600
   #filter: "🏁|🏴‍☠️"
   exclude-filter: "🇮🇱|🇦🇲|🇦🇿|🇹🇷|🇧🇾|🇰🇿|🇷🇺|🇨🇳|🇮🇷" ## Remember: No Russian.
   use:
@@ -89,9 +90,9 @@ proxy-providers:
       #enable: true
       #interval: 21600
       #lazy: true
-      #url: "https://cp.cloudflare.com"
+      #url: "https://cp.cloudflare.com/"
       ##url: "https://detectportal.firefox.com/success.txt"
-      ##url: "https://captive.apple.com"
+      ##url: "https://captive.apple.com/"
 
   aggregator:
     type: http
@@ -105,9 +106,9 @@ proxy-providers:
       enable: true
       interval: 21600
       lazy: true
-      url: "https://cp.cloudflare.com"
+      url: "https://cp.cloudflare.com/"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+      #url: "https://captive.apple.com/"
 
   soroush:
     type: http
@@ -120,9 +121,9 @@ proxy-providers:
       enable: true
       interval: 21600
       lazy: true
-      url: "https://cp.cloudflare.com"
+      url: "https://cp.cloudflare.com/"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+      #url: "https://captive.apple.com/"
 
 rule-providers:
 
@@ -227,6 +228,7 @@ rule-providers:
     interval: 259200
 
 rules:
+  #- PROCESS-NAME,dnscrypt-proxy,DIRECT
   - OR,((GEOSITE,private),(GEOIP,private,no-resolve)),DIRECT
 
   - OR,((GEOSITE,category-ads-all),(GEOSITE,win-spy)),REJECT
