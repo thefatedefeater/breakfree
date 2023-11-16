@@ -71,9 +71,9 @@ proxy-groups:
 
 - name: auto
   type: url-test
-  tolerance: 1000
+  #tolerance: 300
   url: "https://cp.cloudflare.com/"
-  interval: 21600
+  interval: 10800
   #filter: "🏁|🏴‍☠️"
   exclude-filter: "🇮🇱|🇦🇲|🇦🇿|🇹🇷|🇧🇾|🇰🇿|🇷🇺|🇨🇳|🇮🇷" ## Remember: No Russian.
   use:
@@ -88,7 +88,7 @@ proxy-providers:
     #path: ./providers/local.yaml ## << Put your custom servers here. Meta also accepts base64-encoded and v2ray URIs.
     #health-check:
       #enable: true
-      #interval: 21600
+      #interval: 10800
       #lazy: true
       #url: "https://cp.cloudflare.com/"
       ##url: "https://detectportal.firefox.com/success.txt"
@@ -104,7 +104,7 @@ proxy-providers:
     exclude-type: "http|socks5"
     health-check:
       enable: true
-      interval: 21600
+      interval: 10800
       lazy: true
       url: "https://cp.cloudflare.com/"
       #url: "https://detectportal.firefox.com/success.txt"
@@ -119,7 +119,7 @@ proxy-providers:
     exclude-type: "http|socks5"
     health-check:
       enable: true
-      interval: 21600
+      interval: 10800
       lazy: true
       url: "https://cp.cloudflare.com/"
       #url: "https://detectportal.firefox.com/success.txt"
