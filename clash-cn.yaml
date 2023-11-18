@@ -58,13 +58,11 @@ proxy-groups:
 - name: auto
   type: url-test
   #tolerance: 300
-  url: "https://cp.cloudflare.com/"
-  interval: 10800
   #filter: "🏁|🏴‍☠️"
   use:
-    #- local
-    #- soroush
     - aggregator
+    #- soroush
+    #- local
 
 proxy-providers:
 
@@ -75,24 +73,25 @@ proxy-providers:
       #enable: true
       #interval: 10800
       #lazy: true
-      #url: "https://cp.cloudflare.com/"
+      #url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
-      ##url: "https://captive.apple.com/"
+      ##url: "https://captive.apple.com"
 
   aggregator:
     type: http
     #url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
     #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
-    url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
+    #url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
+    url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt&type=clash&process=full"
     interval: 86400
     path: ./providers/aggregator.yaml
     health-check:
       enable: true
       interval: 10800
       lazy: true
-      url: "https://cp.cloudflare.com/"
+      url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com/"
+      #url: "https://captive.apple.com"
 
   #soroush:
     #type: http
@@ -104,9 +103,9 @@ proxy-providers:
       #enable: true
       #interval: 10800
       #lazy: true
-      #url: "https://cp.cloudflare.com/"
+      #url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
-      ##url: "https://captive.apple.com/"
+      ##url: "https://captive.apple.com"
 
 rules:
   #- PROCESS-NAME,dnscrypt-proxy,DIRECT
