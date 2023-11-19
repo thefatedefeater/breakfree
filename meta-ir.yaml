@@ -5,7 +5,7 @@
 ## Country: Iran
 
 mixed-port: 7890
-allow-lan: false
+allow-lan: true
 unified-delay: true
 tcp-concurrent: true
 find-process-mode: always
@@ -47,6 +47,7 @@ dns:
     - "https://pro.shecan.ir/dns-query"
   nameserver:
     - "https://1.0.0.1/dns-query#default"
+    - "https://8.8.4.4/dns-query#default"
   nameserver-policy:
     "geosite:private,category-ir": "https://pro.shecan.ir/dns-query"
     "rule-set:ir": "https://pro.shecan.ir/dns-query"
@@ -67,17 +68,17 @@ proxy-groups:
   type: select
   use:
     #- local
-    - soroush
+    - yebekhe
     - aggregator
 
 - name: auto
   type: url-test
   #tolerance: 300
-  #filter: "🏁|🏴‍☠️"
+  #filter: "🏁|🚩"
   exclude-filter: "🇮🇱|🇦🇲|🇦🇿|🇹🇷|🇧🇾|🇰🇿|🇷🇺|🇨🇳|🇮🇷" ## Remember: No Russian.
   use:
     - aggregator
-    - soroush
+    - yebekhe
     #- local
 
 proxy-providers:
@@ -97,8 +98,7 @@ proxy-providers:
     type: http
     #url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
     #url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
-    #url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
-    url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt&type=clash&process=full"
+    url: "https://cdn.statically.io/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
     interval: 86400
     path: ./providers/aggregator.yaml
     exclude-type: "http|socks5"
@@ -110,12 +110,12 @@ proxy-providers:
       #url: "https://detectportal.firefox.com/success.txt"
       #url: "https://captive.apple.com"
 
-  soroush:
+  yebekhe:
     type: http
-    url: "https://api.sublink.dev/sub?target=clash&url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&emoji=false&list=true&fdn=true"
-    #url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&type=clash&process=full"
+    url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
+    #url: "https://api.sublink.dev/sub?target=clash&url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&emoji=false&list=true&fdn=true"
     interval: 86400
-    path: ./providers/soroush.yaml
+    path: ./providers/yebekhe.yaml
     exclude-type: "http|socks5"
     health-check:
       enable: true
@@ -228,7 +228,6 @@ rule-providers:
     interval: 259200
 
 rules:
-  #- PROCESS-NAME,dnscrypt-proxy,DIRECT
   - OR,((GEOSITE,private),(GEOIP,private,no-resolve)),DIRECT
 
   - OR,((GEOSITE,category-ads-all),(GEOSITE,win-spy)),REJECT

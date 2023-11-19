@@ -5,7 +5,7 @@
 ## Country: China
 
 mixed-port: 7890
-allow-lan: false
+allow-lan: true
 mode: rule
 log-level: error ## silent/error/warning/info/debug
 ipv6: false
@@ -52,16 +52,16 @@ proxy-groups:
   type: select
   use:
     #- local
-    #- soroush
+    - yebekhe
     - aggregator
 
 - name: auto
   type: url-test
   #tolerance: 300
-  #filter: "🏁|🏴‍☠️"
+  #filter: "🏁|🚩"
   use:
     - aggregator
-    #- soroush
+    - yebekhe
     #- local
 
 proxy-providers:
@@ -93,22 +93,21 @@ proxy-providers:
       #url: "https://detectportal.firefox.com/success.txt"
       #url: "https://captive.apple.com"
 
-  #soroush:
-    #type: http
-    #url: "https://api.sublink.dev/sub?target=clash&url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&emoji=false&list=true&fdn=true"
-    ##url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&type=clash&process=full"
-    #interval: 86400
-    #path: ./providers/soroush.yaml
-    #health-check:
-      #enable: true
-      #interval: 10800
-      #lazy: true
-      #url: "https://cp.cloudflare.com"
-      ##url: "https://detectportal.firefox.com/success.txt"
-      ##url: "https://captive.apple.com"
+  yebekhe:
+    type: http
+    url: "https://yebekhe.link/api/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=clash&process=full"
+    #url: "https://api.sublink.dev/sub?target=clash&url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&emoji=false&list=true&fdn=true"
+    interval: 86400
+    path: ./providers/yebekhe.yaml
+    health-check:
+      enable: true
+      interval: 10800
+      lazy: true
+      url: "https://cp.cloudflare.com"
+      #url: "https://detectportal.firefox.com/success.txt"
+      #url: "https://captive.apple.com"
 
 rules:
-  #- PROCESS-NAME,dnscrypt-proxy,DIRECT
   - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs
 
   - DOMAIN-SUFFIX,cn,DIRECT
