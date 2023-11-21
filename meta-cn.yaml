@@ -24,14 +24,14 @@ ntp:
   write-to-system: false
   server: pool.ntp.org
 
-tun:
-  enable: false
-  stack: gvisor ## system/lwip/gvisor
-  dns-hijack:
-    - 'any:53'
-    - "tcp://any:53"
-  auto-route: true
-  auto-detect-interface: true
+#tun:
+  #enable: true
+  #stack: gvisor ## system/lwip/gvisor
+  #dns-hijack:
+    #- 'any:53'
+    #- "tcp://any:53"
+  #auto-route: true
+  #auto-detect-interface: true
 
 dns:
   enable: true
@@ -42,14 +42,17 @@ dns:
   use-hosts: true
   default-nameserver:
     - '127.0.0.1'
-    - '1.0.0.1'
+    - '223.5.5.5'
   proxy-server-nameserver:
-    - "https://223.5.5.5/dns-query"
+    - '127.0.0.1'
+    - '223.5.5.5'
   nameserver:
     - "https://1.0.0.1/dns-query#default"
     - "https://8.8.4.4/dns-query#default"
   nameserver-policy:
-    "geosite:private,cn": "https://223.5.5.5/dns-query"
+    "geosite:private,cn":
+      - '127.0.0.1'
+      - '223.5.5.5'
   fallback-filter:
     geoip: false
 
@@ -76,9 +79,9 @@ proxy-groups:
   #filter: "🏁|🚩"
   exclude-filter: "🇮🇱|🇦🇲|🇦🇿|🇹🇷|🇧🇾|🇰🇿|🇷🇺|🇨🇳|🇮🇷" ## Remember: No Russian.
   use:
-    - aggregator
-    - yebekhe
     #- local
+    - yebekhe
+    - aggregator
 
 proxy-providers:
 
@@ -91,7 +94,7 @@ proxy-providers:
       #lazy: true
       ##url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://www.youtube.com/robots.txt"
+      #url: "https://www.google.com/robots.txt"
 
   aggregator:
     type: http
@@ -107,7 +110,7 @@ proxy-providers:
       lazy: true
       #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      url: "https://www.youtube.com/robots.txt"
+      url: "https://www.google.com/robots.txt"
 
   yebekhe:
     type: http
@@ -122,7 +125,7 @@ proxy-providers:
       lazy: true
       #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      url: "https://www.youtube.com/robots.txt"
+      url: "https://www.google.com/robots.txt"
 
 rule-providers:
 

@@ -24,15 +24,14 @@ ntp:
   write-to-system: false
   server: pool.ntp.org
 
-tun:
-  enable: false
-  stack: gvisor ## system/lwip/gvisor
-  dns-hijack:
-    - 'any:53'
-    - "tcp://any:53"
-  auto-route: true
-  auto-detect-interface: true
-
+#tun:
+  #enable: true
+  #stack: gvisor ## system/lwip/gvisor
+  #dns-hijack:
+    #- 'any:53'
+    #- "tcp://any:53"
+  #auto-route: true
+  #auto-detect-interface: true
 dns:
   enable: true
   #listen: '127.0.0.1:53' ## Or 0.0.0.0:53 for LAN.
@@ -42,15 +41,20 @@ dns:
   use-hosts: true
   default-nameserver:
     - '127.0.0.1'
-    - '1.0.0.1'
+    - '8.8.8.8'
   proxy-server-nameserver:
-    - "https://pro.shecan.ir/dns-query"
+    - '127.0.0.1'
+    - '8.8.8.8'
   nameserver:
     - "https://1.0.0.1/dns-query#default"
     - "https://8.8.4.4/dns-query#default"
   nameserver-policy:
-    "geosite:private,category-ir": "https://pro.shecan.ir/dns-query"
-    "rule-set:ir": "https://pro.shecan.ir/dns-query"
+    "geosite:private,category-ir":
+      - '127.0.0.1'
+      - '8.8.8.8'
+    "rule-set:ir":
+      - '127.0.0.1'
+      - '8.8.8.8'
   fallback-filter:
     geoip: false
 
@@ -77,9 +81,9 @@ proxy-groups:
   #filter: "🏁|🚩"
   exclude-filter: "🇮🇱|🇦🇲|🇦🇿|🇹🇷|🇧🇾|🇰🇿|🇷🇺|🇨🇳|🇮🇷" ## Remember: No Russian.
   use:
-    - aggregator
-    - yebekhe
     #- local
+    - yebekhe
+    - aggregator
 
 proxy-providers:
 
@@ -92,7 +96,7 @@ proxy-providers:
       #lazy: true
       ##url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://www.youtube.com/robots.txt"
+      #url: "https://www.google.com/robots.txt"
 
   aggregator:
     type: http
@@ -108,7 +112,7 @@ proxy-providers:
       lazy: true
       #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      url: "https://www.youtube.com/robots.txt"
+      url: "https://www.google.com/robots.txt"
 
   yebekhe:
     type: http
@@ -123,7 +127,7 @@ proxy-providers:
       lazy: true
       #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      url: "https://www.youtube.com/robots.txt"
+      url: "https://www.google.com/robots.txt"
 
 rule-providers:
 
