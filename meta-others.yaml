@@ -8,12 +8,12 @@ mixed-port: 7890
 allow-lan: true
 unified-delay: true
 tcp-concurrent: true
-find-process-mode: always
+find-process-mode: off
 global-client-fingerprint: random
 geodata-mode: true
 mode: rule
 log-level: error ## silent/error/warning/info/debug
-ipv6: false
+ipv6: true
 external-controller: '127.0.0.1:9090'
 profile:
   store-selected: false ## It's best to default to "auto" every time it restarts.
@@ -89,9 +89,9 @@ proxy-providers:
       #enable: true
       #interval: 10800
       #lazy: true
-      #url: "https://cp.cloudflare.com"
+      ##url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
-      ##url: "https://captive.apple.com"
+      #url: "https://www.pornhub.com/robots.txt"
 
   aggregator:
     type: http
@@ -105,9 +105,9 @@ proxy-providers:
       enable: true
       interval: 10800
       lazy: true
-      url: "https://cp.cloudflare.com"
+      #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+      url: "https://www.pornhub.com/robots.txt"
 
   yebekhe:
     type: http
@@ -120,9 +120,9 @@ proxy-providers:
       enable: true
       interval: 10800
       lazy: true
-      url: "https://cp.cloudflare.com"
+      #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+      url: "https://www.pornhub.com/robots.txt"
 
 rule-providers:
 
@@ -196,16 +196,6 @@ rule-providers:
     path: ./ruleset/phishing-ip.txt
     interval: 259200
 
-  apps:
-    type: http
-    format: yaml
-    behavior: classical
-    #url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
-    #url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
-    url: "https://cdn.statically.io/gh/Loyalsoldier/clash-rules@release/applications.txt"
-    path: ./ruleset/apps.yaml
-    interval: 259200
-
 rules:
   - OR,((GEOSITE,private),(GEOIP,private,no-resolve)),DIRECT
 
@@ -223,5 +213,4 @@ rules:
 
 
 
-  - RULE-SET,apps,DIRECT
   - MATCH,default

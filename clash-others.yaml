@@ -8,7 +8,7 @@ mixed-port: 7890
 allow-lan: true
 mode: rule
 log-level: error ## silent/error/warning/info/debug
-ipv6: false
+ipv6: true
 external-controller: '127.0.0.1:9090'
 profile:
   store-selected: false ## It's best to default to "auto" every time it restarts.
@@ -70,9 +70,9 @@ proxy-providers:
       #enable: true
       #interval: 10800
       #lazy: true
-      #url: "https://cp.cloudflare.com"
+      ##url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
-      ##url: "https://captive.apple.com"
+      #url: "https://www.pornhub.com/robots.txt"
 
   aggregator:
     type: http
@@ -86,9 +86,9 @@ proxy-providers:
       enable: true
       interval: 10800
       lazy: true
-      url: "https://cp.cloudflare.com"
+      #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+      url: "https://www.pornhub.com/robots.txt"
 
   yebekhe:
     type: http
@@ -100,9 +100,9 @@ proxy-providers:
       enable: true
       interval: 10800
       lazy: true
-      url: "https://cp.cloudflare.com"
+      #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+      url: "https://www.pornhub.com/robots.txt"
 
 rules:
   - GEOIP,private,DIRECT,no-resolve ## Loopback and LAN IPs

@@ -8,12 +8,12 @@ mixed-port: 7890
 allow-lan: true
 unified-delay: true
 tcp-concurrent: true
-find-process-mode: always
+find-process-mode: off
 global-client-fingerprint: random
 geodata-mode: true
 mode: rule
 log-level: error ## silent/error/warning/info/debug
-ipv6: false
+ipv6: true
 external-controller: '127.0.0.1:9090'
 profile:
   store-selected: false ## It's best to default to "auto" every time it restarts.
@@ -90,9 +90,9 @@ proxy-providers:
       #enable: true
       #interval: 10800
       #lazy: true
-      #url: "https://cp.cloudflare.com"
+      ##url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
-      ##url: "https://captive.apple.com"
+      #url: "https://www.pornhub.com/robots.txt"
 
   aggregator:
     type: http
@@ -106,9 +106,9 @@ proxy-providers:
       enable: true
       interval: 10800
       lazy: true
-      url: "https://cp.cloudflare.com"
+      #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+      url: "https://www.pornhub.com/robots.txt"
 
   yebekhe:
     type: http
@@ -121,9 +121,9 @@ proxy-providers:
       enable: true
       interval: 10800
       lazy: true
-      url: "https://cp.cloudflare.com"
+      #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://captive.apple.com"
+      url: "https://www.pornhub.com/robots.txt"
 
 rule-providers:
 
@@ -197,26 +197,6 @@ rule-providers:
     path: ./ruleset/phishing-ip.txt
     interval: 259200
 
-  apps:
-    type: http
-    format: yaml
-    behavior: classical
-    #url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
-    #url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
-    url: "https://cdn.statically.io/gh/Loyalsoldier/clash-rules@release/applications.txt"
-    path: ./ruleset/apps.yaml
-    interval: 259200
-
-  ir-apps:
-    type: http
-    format: text
-    behavior: classical
-    #url: "https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/apps.txt"
-    #url: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-clash-rules@release/apps.txt"
-    url: "https://cdn.statically.io/gh/chocolate4u/Iran-clash-rules@release/apps.txt"
-    path: ./ruleset/ir-apps.txt
-    interval: 259200
-
   ir:
     type: http
     format: text
@@ -234,7 +214,7 @@ rules:
   - OR,((RULE-SET,category-ads-all),(RULE-SET,malware),(RULE-SET,phishing),(RULE-SET,cryptominers)),REJECT
   #- OR,((GEOSITE,category-porn),(RULE-SET,nsfw)),REJECT ## Pornography and gambling
 
-  - OR,((RULE-SET,ir-apps),(GEOSITE,category-ir),(RULE-SET,ir)),DIRECT
+  - OR,((GEOSITE,category-ir),(RULE-SET,ir)),DIRECT
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
   #- GEOSITE,category-games,DIRECT ## Gaming
 
@@ -244,5 +224,4 @@ rules:
   - GEOIP,ir,DIRECT
   - GEOIP,il,default
 
-  - RULE-SET,apps,DIRECT
   - MATCH,default
