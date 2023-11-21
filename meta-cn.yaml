@@ -36,7 +36,7 @@ ntp:
 dns:
   enable: true
   #listen: '127.0.0.1:53' ## Or 0.0.0.0:53 for LAN.
-  ipv6: true
+  ipv6: false
   prefer-h3: true
   enhanced-mode: fake-ip
   use-hosts: true
