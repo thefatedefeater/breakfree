@@ -91,7 +91,7 @@ proxy-providers:
       #lazy: true
       ##url: "https://cp.cloudflare.com"
       ##url: "https://detectportal.firefox.com/success.txt"
-      #url: "https://www.pornhub.com/robots.txt"
+      #url: "https://www.youtube.com/robots.txt"
 
   aggregator:
     type: http
@@ -107,7 +107,7 @@ proxy-providers:
       lazy: true
       #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      url: "https://www.pornhub.com/robots.txt"
+      url: "https://www.youtube.com/robots.txt"
 
   yebekhe:
     type: http
@@ -122,7 +122,7 @@ proxy-providers:
       lazy: true
       #url: "https://cp.cloudflare.com"
       #url: "https://detectportal.firefox.com/success.txt"
-      url: "https://www.pornhub.com/robots.txt"
+      url: "https://www.youtube.com/robots.txt"
 
 rule-providers:
 
