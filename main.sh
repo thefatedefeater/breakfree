@@ -10,7 +10,8 @@ curl -fsS http://localhost:8080/servers > servers.json
 curl -fsS http://localhost:8080/servers-lite > servers-lite.json
 
 #quick-fix
-sed -i s/\;mux\=true//g servers.json servers-lite.json
+sed -i s/\;mux\=true//g servers.json
+sed -i s/\;mux\=true//g servers-lite.json
 
 python main.py servers.json template-ir.json ir.json
 python main.py servers.json template-ir-sfw.json ir-sfw.json
