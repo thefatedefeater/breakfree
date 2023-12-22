@@ -1,12 +1,8 @@
 #!/usr/bin/env sh
 
-git clone https://github.com/SagerNet/serenity.git
-cd serenity
-git checkout "ca68443caecfee4debf364b8ec992b91c8644cab"
-go install -ldflags "-s -w" ./cmd/serenity
+bash <(curl -fsSL https://sing-box.app/serenity/deb-install.sh)
 sleep 60
-./serenity run &
-cd ..
+serenity run &
 sleep 20
 
 curl -fsS http://localhost:8080/servers > servers.json
@@ -22,7 +18,7 @@ python main.py servers.json template-cn-sfw.json cn-sfw.json
 python main.py servers-lite.json template-cn.json cn-lite.json
 python main.py servers-lite.json template-cn-sfw.json cn-sfw-lite.json
 
-go install github.com/sagernet/sing-box/cmd/sing-box@latest
+bash <(curl -fsSL https://sing-box.app/deb-install.sh)
 
-for i in `ls ir* cn*`; do sing-box -c "$i" check && echo "$i is OK!"; done
+for i in `ls ir* cn*`; do sing-box -c "$i" check && echo "'$i' is OK!"; done
 echo "SUCCESS!"
