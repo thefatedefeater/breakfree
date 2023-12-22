@@ -40145,7 +40145,7 @@
       "method": "aes-128-gcm",
       "password": "g12sQi#ss#\u00261",
       "plugin": "v2ray-plugin",
-      "plugin_opts": "mode=websocket;host=;path=;tls=false;mux=true;skip-cert-verify=false",
+      "plugin_opts": "mode=websocket;host=;path=;tls=false;skip-cert-verify=false",
       "network": "tcp"
     },
     {
@@ -40413,7 +40413,7 @@
       "method": "aes-128-gcm",
       "password": "g12sQi#ss#\u00261",
       "plugin": "v2ray-plugin",
-      "plugin_opts": "path=;tls=false;mux=true;skip-cert-verify=false;mode=websocket;host=",
+      "plugin_opts": "path=;tls=false;skip-cert-verify=false;mode=websocket;host=",
       "network": "tcp"
     },
     {
