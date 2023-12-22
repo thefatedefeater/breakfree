@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-git clone github.com/sagernet/serenity
+git clone https://github.com/SagerNet/serenity.git
 cd serenity
 go install -ldflags "-s -w" ./cmd/serenity && ./serenity run &
 cd
