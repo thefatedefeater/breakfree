@@ -7,7 +7,7 @@
     "servers": [
       {
         "tag": "remote",
-        "address": "fakeip"
+        "address": "https://1.0.0.1/dns-query"
       },
       {
         "tag": "direct",
