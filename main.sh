@@ -3,7 +3,7 @@ export GOPROXY="https://proxy.golang.org,direct"
 
 git clone https://github.com/SagerNet/serenity
 cd serenity && make install && cd ..
-sleep 60
+#sleep 60
 serenity run &
 sleep 20
 
@@ -22,7 +22,7 @@ python main.py servers-lite.json template-cn-sfw.json cn-sfw-lite.json
 
 git clone https://github.com/SagerNet/sing-box
 cd sing-box && make install && cd ..
-sleep 60
+#sleep 60
 
 for i in ir*.json cn*.json; do sing-box -c "$i" check && echo "'$i' is OK!"; done
 echo "SUCCESS!"
