@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 cd
-mkdir -p ~/go/bin
-export GOPATH="~/go"
+mkdir -p go/bin
+export GOPATH="go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 
