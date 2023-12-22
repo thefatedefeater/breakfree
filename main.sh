@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
+export GOPROXY="https://goproxy.io,https://proxy.golang.org,direct"
 
-bash <(curl -fsSL https://sing-box.app/serenity/deb-install.sh)
+git clone https://github.com/SagerNet/serenity
+cd serenity && make install && cd ..
 sleep 60
 serenity run &
 sleep 20
@@ -18,7 +20,9 @@ python main.py servers.json template-cn-sfw.json cn-sfw.json
 python main.py servers-lite.json template-cn.json cn-lite.json
 python main.py servers-lite.json template-cn-sfw.json cn-sfw-lite.json
 
-bash <(curl -fsSL https://sing-box.app/deb-install.sh)
+git clone https://github.com/SagerNet/sing-box
+cd sing-box && make install && cd ..
+sleep 60
 
 for i in `ls ir* cn*`; do sing-box -c "$i" check && echo "'$i' is OK!"; done
 echo "SUCCESS!"
