@@ -8,11 +8,18 @@ jobs:
     name: "Running main.sh"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-go@v4
         with:
           go-version: '>=1.21.0'
       - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Load Cache
+        uses: actions/cache@v3
       - name: Collect and reformat
         run: bash main.sh
       - name: Commit and push
@@ -21,4 +28,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add ir* cn* cache.db servers.json servers-lite.json
           git commit -m "`date '+%j %T'` collected"
-          git push
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: master
