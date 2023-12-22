@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-export GOPROXY="https://goproxy.io,https://proxy.golang.org,direct"
+export GOPROXY="https://proxy.golang.org,direct"
 
 git clone https://github.com/SagerNet/serenity
 cd serenity && make install && cd ..
