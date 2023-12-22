@@ -2,8 +2,10 @@
 
 git clone https://github.com/SagerNet/serenity.git
 cd serenity
-go install -ldflags "-s -w" ./cmd/serenity && ./serenity run &
-cd
+go install -ldflags "-s -w" ./cmd/serenity
+sleep 60
+./serenity run &
+cd ..
 sleep 20
 
 curl -fsS http://localhost:8080/servers > servers.json
