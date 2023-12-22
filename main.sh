@@ -9,6 +9,9 @@ sleep 20
 curl -fsS http://localhost:8080/servers > servers.json
 curl -fsS http://localhost:8080/servers-lite > servers-lite.json
 
+#quick-fix
+sed -i s/\;mux\=true//g servers.json servers-lite.json
+
 python main.py servers.json template-ir.json ir.json
 python main.py servers.json template-ir-sfw.json ir-sfw.json
 python main.py servers-lite.json template-ir.json ir-lite.json
@@ -20,9 +23,6 @@ python main.py servers.json template-cn-sfw.json cn-sfw.json
 python main.py servers-lite.json template-cn.json cn-lite.json
 python main.py servers-lite.json template-cn-sfw.json cn-sfw-lite.json
 echo "CN files exported!"
-
-#quick-fix
-sed -i s/\;mux\=true//g servers.json servers-lite.json i*.json c*.json
 
 git clone https://github.com/SagerNet/sing-box
 cd sing-box && git checkout main && make install && cd ..
