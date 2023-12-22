@@ -24,7 +24,7 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add ir* cn* servers.json servers-lite.json
+          git add ir* cn*
           git commit -m "`date '+%j %T'` collected"
       - name: Push Changes
         uses: ad-m/github-push-action@master
