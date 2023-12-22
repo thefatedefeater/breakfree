@@ -24,4 +24,4 @@ jobs:
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
-          branch: sing-box
+          branch: master
