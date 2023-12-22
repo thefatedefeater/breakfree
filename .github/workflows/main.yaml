@@ -1,0 +1,27 @@
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "0 0 * * *"
+
+jobs:
+  main:
+    name: "Running main.sh"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: 
+          fetch-depth=0
+      - uses: actions/setup-go@v4
+      - uses: actions/setup-python@v5
+      - name: Collect and reformat
+        run: bash main.sh
+      - name: Commit
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add ir* cn* cache.db servers.json servers-lite.json
+          git commit -m "`date '+%j %T'` collected"
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: sing-box

@@ -1,0 +1,60 @@
+{
+  "log": {
+    "level": "debug",
+    "timestamp": true
+  },
+  "listen": "0.0.0.0:8080",
+  "subscriptions": [
+    {
+      "name": "aggregator-lite",
+      "url": "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/Eternity.yml",
+      "deduplication": false,
+      "process": [
+	      {
+		      "exclude": ["🇮🇱", "🇷🇺", "🇨🇳", "🇮🇷"],
+		      "exclude_outbound_type": ["http", "socks5", "shadowsocksr"]
+	      }
+      ]
+    },
+    {
+      "name": "aggregator",
+      "url": "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml",
+      "deduplication": false,
+      "process": [
+	      {
+		      "exclude": ["🇮🇱", "🇷🇺", "🇨🇳", "🇮🇷"],
+		      "exclude_outbound_type": ["http", "socks5", "shadowsocksr"]
+	      }
+      ]
+    },
+    {
+      "name": "yebekhe",
+      "url": "https://cdn.statically.io/gh/yebekhe/TelegramV2rayCollector/main/singbox/sfasfi/mixLite.json",
+      "deduplication": false,
+      "process": [
+	      {
+		      "exclude": ["🇮🇱", "🇷🇺", "🇨🇳", "🇮🇷"],
+		      "exclude_outbound_type": ["http", "socks5", "shadowsocksr"]
+	      }
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "name": "breakfree",
+      "disable_default_rules": true
+    }
+  ],
+  "profiles": [
+    {
+      "subscription": ["yebekhe", "aggregator"],
+      "template": "breakfree",
+      "name": "servers"
+    },
+    {
+	    "subscription": ["yebekhe", "aggregator-lite"],
+	    "template": "breakfree",
+	    "name": "servers-lite"
+    }
+  ]
+}
