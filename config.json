@@ -8,7 +8,7 @@
     {
       "name": "aggregator-lite",
       "url": "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/Eternity.yml",
-      "deduplication": false,
+      //"deduplication": true,
       "process": [
 	      {
 		      "exclude": ["🇮🇱", "🇷🇺", "🇨🇳", "🇮🇷"],
@@ -19,7 +19,7 @@
     {
       "name": "aggregator",
       "url": "https://cdn.statically.io/gh/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml",
-      "deduplication": false,
+      //"deduplication": true,
       "process": [
 	      {
 		      "exclude": ["🇮🇱", "🇷🇺", "🇨🇳", "🇮🇷"],
@@ -30,7 +30,7 @@
     {
       "name": "yebekhe",
       "url": "https://cdn.statically.io/gh/yebekhe/TelegramV2rayCollector/main/singbox/sfasfi/mixLite.json",
-      "deduplication": false,
+      //"deduplication": true,
       "process": [
 	      {
 		      "exclude": ["🇮🇱", "🇷🇺", "🇨🇳", "🇮🇷"],
