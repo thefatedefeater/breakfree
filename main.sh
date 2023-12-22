@@ -2,9 +2,7 @@
 
 git clone github.com/sagernet/serenity
 cd serenity
-go install -ldflags "-s -w" ./cmd/serenity
-
-./serenity run &
+go install -ldflags "-s -w" ./cmd/serenity && ./serenity run &
 cd
 sleep 20
 
