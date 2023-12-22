@@ -24,5 +24,5 @@ git clone https://github.com/SagerNet/sing-box
 cd sing-box && make install && cd ..
 sleep 60
 
-for i in `ls ir* cn*`; do sing-box -c "$i" check && echo "'$i' is OK!"; done
+for i in ir*.json cn*.json; do sing-box -c "$i" check && echo "'$i' is OK!"; done
 echo "SUCCESS!"
