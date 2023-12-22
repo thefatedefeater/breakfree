@@ -1,13 +1,11 @@
 #!/usr/bin/env sh
+
+git clone github.com/sagernet/serenity
+cd serenity
+go install -ldflags "-s -w" ./cmd/serenity
+
+./serenity run &
 cd
-mkdir -p go/bin
-export GOPATH="go"
-export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOBIN"
-
-go install github.com/sagernet/serenity/cmd/serenity@latest
-
-serenity run &
 sleep 20
 
 curl -fsS http://localhost:8080/servers > servers.json
