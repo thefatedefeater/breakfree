@@ -2,6 +2,7 @@
 
 git clone https://github.com/SagerNet/serenity.git
 cd serenity
+git checkout "ca68443caecfee4debf364b8ec992b91c8644cab"
 go install -ldflags "-s -w" ./cmd/serenity
 sleep 60
 ./serenity run &
