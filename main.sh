@@ -28,5 +28,7 @@ echo "CN files exported!"
 git clone https://github.com/SagerNet/sing-box
 cd sing-box && git checkout main && make install && cd ..
 
-for i in i*.json c*.json; do sing-box -c "$i" check && echo "'$i' is OK!"; done
+for i in ir*.json cn*.json; do sing-box -c "$i" check && echo "'$i' is OK!"; done
+
+mv ir*.json cn*.json release/Sing-Box/
 echo "SUCCESS!"
