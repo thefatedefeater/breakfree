@@ -113,7 +113,7 @@ rules:
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
   #- GEOSITE,category-games,DIRECT ## Gaming
 
-  - GEOSITE,geolocation-!cn,proxy ## When all else failed, vote from the rooftops.
+  - GEOSITE,geolocation-!cn,default ## When all else failed, vote from the rooftops.
 
   - OR,((GEOIP,malware),(GEOIP,phishing)),REJECT
   - GEOIP,cn,DIRECT
