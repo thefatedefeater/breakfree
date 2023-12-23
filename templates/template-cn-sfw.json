@@ -132,8 +132,8 @@
           "malware",
           "phishing",
           "cryptominers",
-	  "category-porn",
-	  "nsfw"
+          "category-porn",
+          "nsfw"
         ],
         "outbound": "block"
       },
