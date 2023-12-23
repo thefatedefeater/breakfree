@@ -3,7 +3,7 @@ export GOPROXY="https://proxy.golang.org,direct"
 
 git clone https://github.com/SagerNet/serenity
 cd serenity && make install && cd ..
-serenity run &
+serenity -c serenity.json run &
 sleep 20
 
 curl -fsS http://localhost:8080/servers > servers.json
