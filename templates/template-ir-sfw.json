@@ -6,19 +6,30 @@
   "dns": {
     "servers": [
       {
-        "tag": "remote",
+        "tag": "cloudflare",
         "address": "https://1.0.0.1/dns-query"
       },
       {
         "tag": "direct",
         "address": "8.8.4.4",
         "detour": "direct"
+      },
+      {
+        "tag": "remote",
+        "address": "fakeip"
       }
     ],
     "rules": [
       {
         "outbound": "any",
         "server": "direct"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "remote"
       }
     ],
     "independent_cache": true,
@@ -30,7 +41,7 @@
     }
   },
   "ntp": {
-    "enabled": true,
+    "enabled": false,
     "server": "pool.ntp.org",
     "detour": "direct"
   },
@@ -47,7 +58,7 @@
       "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
       "strict_route": true,
-      "stack": "gvisor",
+      "stack": "mixed",
       "sniff": true,
       "exclude_package": [
         "com.android.captiveportallogin"
@@ -82,7 +93,7 @@
     {
       "type": "urltest",
       "tag": "auto",
-      "url": "https://cp.cloudflare.com",
+      "url": "https://www.google.com/robots.txt",
       "interval": "3h",
       "outbounds": []
     },
@@ -128,12 +139,12 @@
       },
       {
         "geosite": [
+          "category-porn",
+          "nsfw",
           "category-ads-all",
           "malware",
           "phishing",
-          "cryptominers",
-          "category-porn",
-          "nsfw"
+          "cryptominers"
         ],
         "outbound": "block"
       },
@@ -147,8 +158,8 @@
       {
         "geosite": [
           "private",
-          "category-ir",
-          "ir"
+          "ir",
+          "category-ir"
         ],
         "outbound": "direct"
       },
@@ -174,7 +185,7 @@
       "store_fakeip": true
     },
     "debug": {
-      "memory_limit": "200m",
+      "memory_limit": "300m",
       "oom_killer": true
     }
   }
