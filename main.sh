@@ -13,16 +13,16 @@ curl -fsS http://localhost:8080/servers-lite > servers-lite.json
 sed -i s/\;mux\=true//g servers.json servers-lite.json
 sed -i s/mux\=true\;//g servers.json servers-lite.json
 
-python main.py servers.json template-ir.json ir.json
-python main.py servers.json template-ir-sfw.json ir-sfw.json
-python main.py servers-lite.json template-ir.json ir-lite.json
-python main.py servers-lite.json template-ir-sfw.json ir-sfw-lite.json
+python main.py servers.json templates/template-ir.json ir.json
+python main.py servers.json templates/template-ir-sfw.json ir-sfw.json
+python main.py servers-lite.json templates/template-ir.json ir-lite.json
+python main.py servers-lite.json templates/template-ir-sfw.json ir-sfw-lite.json
 echo "IR files exported!"
 
-python main.py servers.json template-cn.json cn.json
-python main.py servers.json template-cn-sfw.json cn-sfw.json
-python main.py servers-lite.json template-cn.json cn-lite.json
-python main.py servers-lite.json template-cn-sfw.json cn-sfw-lite.json
+python main.py servers.json templates/template-cn.json cn.json
+python main.py servers.json templates/template-cn-sfw.json cn-sfw.json
+python main.py servers-lite.json templates/template-cn.json cn-lite.json
+python main.py servers-lite.json templates/template-cn-sfw.json cn-sfw-lite.json
 echo "CN files exported!"
 
 git clone https://github.com/SagerNet/sing-box
