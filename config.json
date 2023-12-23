@@ -1,4 +1,5 @@
 {
+  "cache_file": "serenity.db",
   "log": {
     "level": "debug",
     "timestamp": true
