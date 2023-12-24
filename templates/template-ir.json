@@ -138,6 +138,10 @@
         "outbound": "dns"
       },
       {
+        "port": 123,
+        "outbound": "direct"
+      },
+      {
         "geosite": [
           "category-ads-all",
           "malware",
