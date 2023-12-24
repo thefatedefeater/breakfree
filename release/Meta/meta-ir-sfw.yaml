@@ -4,7 +4,7 @@
 ## Software: Clash Meta
 ## Country: Iran (Safe for Work)
 
-p: &p {type: "http", interval: 86400, exclude-type: "http|socks5", exclude-filter: "🇮🇱|🇨🇳|🇷🇺|🇮🇷", health-check: {enable: true, interval: 10800, lazy: false, url: "https://www.gstatic.com/generate_204"}}
+p: &p {type: "http", interval: 86400, exclude-type: "http|socks5", exclude-filter: "🇮🇱|🇨🇳|🇷🇺|🇮🇷", health-check: {enable: true, interval: 10800, lazy: false, url: "https://www.google.com/robots.txt"}}
 
 allow-lan: true
 external-controller: '127.0.0.1:9090'
