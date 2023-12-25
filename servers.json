@@ -39630,7 +39630,7 @@
       "method": "aes-128-gcm",
       "password": "g12sQi#ss#\u00261",
       "plugin": "v2ray-plugin",
-      "plugin_opts": "tls=false;skip-cert-verify=false;mode=websocket;host=;path=",
+      "plugin_opts": "path=;tls=false;skip-cert-verify=false;mode=websocket;host=",
       "network": "tcp"
     },
     {
@@ -39659,7 +39659,7 @@
       "method": "aes-128-gcm",
       "password": "g12sQi#ss#\u00261",
       "plugin": "v2ray-plugin",
-      "plugin_opts": "skip-cert-verify=false;mode=websocket;host=;path=;tls=false",
+      "plugin_opts": "path=;tls=false;skip-cert-verify=false;mode=websocket;host=",
       "network": "tcp"
     },
     {
@@ -39670,7 +39670,7 @@
       "method": "chacha20-ietf-poly1305",
       "password": "4d1e8cd03847",
       "plugin": "v2ray-plugin",
-      "plugin_opts": "path=/wlkldrkdzet;tls=true;skip-cert-verify=false;mode=websocket;host=wtw1000mline004.chilines.club",
+      "plugin_opts": "skip-cert-verify=false;mode=websocket;host=wtw1000mline004.chilines.club;path=/wlkldrkdzet;tls=true",
       "network": "tcp"
     },
     {
