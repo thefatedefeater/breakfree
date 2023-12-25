@@ -1,132 +1,147 @@
 {
-  "log": {
-    "level": "fatal",
-    "timestamp": true
-  },
   "dns": {
-    "servers": [
-      {
-        "tag": "cloudflare",
-        "address": "https://1.0.0.1/dns-query"
-      },
-      {
-        "tag": "direct",
-        "address": "https://223.5.5.5/dns-query",
-        "detour": "direct"
-      },
-      {
-        "tag": "remote",
-        "address": "fakeip"
-      }
-    ],
+    "fakeip": {
+      "enabled": false,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
+    "independent_cache": true,
+    "reverse_mapping": true,
     "rules": [
+      {
+        "outbound": [
+          "auto",
+          "manual"
+        ],
+        "server": "remote"
+      },
       {
         "outbound": "any",
         "server": "direct"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "remote"
       }
     ],
-    "independent_cache": true,
-    "reverse_mapping": true,
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    }
+    "servers": [
+      {
+        "address": "https://1.1.1.1/dns-query",
+        "tag": "remote"
+      },
+      {
+        "address": "https://223.5.5.5/dns-query",
+        "address_resolver": "bootstrap",
+        "detour": "direct",
+        "tag": "direct"
+      },
+      {
+        "address": "8.8.8.8",
+        "detour": "direct",
+        "tag": "bootstrap"
+      }
+    ]
   },
-  "ntp": {
-    "enabled": false,
-    "server": "pool.ntp.org",
-    "detour": "direct"
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "xd",
+      "external_ui_download_detour": "direct",
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip",
+      "store_fakeip": true
+    },
+    "debug": {
+      "memory_limit": "300m",
+      "oom_killer": true
+    }
   },
   "inbounds": [
     {
-      "type": "mixed",
       "listen": "127.0.0.1",
       "listen_port": 7890,
-      "sniff": true
+      "sniff": true,
+      "type": "mixed"
     },
     {
-      "type": "tun",
-      "inet4_address": "172.19.0.1/30",
-      "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
-      "strict_route": true,
-      "stack": "mixed",
-      "sniff": true,
       "exclude_package": [
         "com.android.captiveportallogin"
       ],
+      "inet4_address": "172.19.0.1/30",
+      "inet6_address": "fdfe:dcba:9876::1/126",
       "platform": {
         "http_proxy": {
           "enabled": true,
           "server": "127.0.0.1",
           "server_port": 7890
         }
-      }
+      },
+      "sniff": true,
+      "stack": "gvisor",
+      "strict_route": true,
+      "type": "tun"
     }
   ],
+  "log": {
+    "level": "fatal",
+    "timestamp": true
+  },
+  "ntp": {
+    "detour": "direct",
+    "enabled": false,
+    "server": "pool.ntp.org"
+  },
   "outbounds": [
     {
-      "type": "selector",
-      "tag": "default",
       "interrupt_exist_connections": true,
       "outbounds": [
         "auto",
         "manual",
         "direct",
         "block"
-      ]
+      ],
+      "tag": "default",
+      "type": "selector"
     },
     {
-      "type": "selector",
-      "tag": "manual",
       "interrupt_exist_connections": true,
-      "outbounds": []
+      "outbounds": [],
+      "tag": "manual",
+      "type": "selector"
     },
     {
-      "type": "urltest",
-      "tag": "auto",
-      "url": "https://www.google.com/robots.txt",
       "interval": "3h",
-      "outbounds": []
+      "outbounds": [],
+      "tag": "auto",
+      "type": "urltest",
+      "url": "https://www.google.com/robots.txt"
     },
     {
-      "type": "direct",
-      "tag": "direct"
+      "tag": "direct",
+      "type": "direct"
     },
     {
-      "type": "block",
-      "tag": "block"
+      "tag": "block",
+      "type": "block"
     },
     {
-      "type": "dns",
-      "tag": "dns"
+      "tag": "dns",
+      "type": "dns"
     }
   ],
   "route": {
     "auto_detect_interface": true,
-    "override_android_vpn": true,
     "geoip": {
-      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geoip.db",
       "download_detour": "direct",
+      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geoip.db",
       "path": "geoip.db"
     },
     "geosite": {
-      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geosite.db",
       "download_detour": "direct",
+      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geosite.db",
       "path": "geosite.db"
     },
+    "override_android_vpn": true,
     "rules": [
       {
-        "type": "logical",
         "mode": "or",
+        "outbound": "dns",
         "rules": [
           {
             "port": 53
@@ -135,11 +150,11 @@
             "protocol": "dns"
           }
         ],
-        "outbound": "dns"
+        "type": "logical"
       },
       {
-        "port": 123,
-        "outbound": "direct"
+        "outbound": "direct",
+        "port": 123
       },
       {
         "geosite": [
@@ -178,18 +193,5 @@
         "outbound": "default"
       }
     ]
-  },
-  "experimental": {
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "xd",
-      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip",
-      "external_ui_download_detour": "direct",
-      "store_fakeip": true
-    },
-    "debug": {
-      "memory_limit": "300m",
-      "oom_killer": true
-    }
   }
 }
