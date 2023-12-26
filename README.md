@@ -1,6 +1,7 @@
 # 🆓 Break Free!
 Sing-Box and Clash Meta configurations for plug-n-play usage, using freely available sources  
-[👥 Telegram](https://t.me/BreakRealFree)
+[👥 Telegram](https://t.me/BreakRealFree)  
+Read the [tutorials](#-tutorials) | [آموزش](#-tutorials) را بخوانید
 
 ## 🏁 Softwares
 | Software | Homepage | Platforms |
@@ -44,7 +45,23 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 > Lite versions contain only a limited set of servers for low-end devices.
 
 ## 🦮 Tutorials
-WIP
+### English
+1. Install the latest stable version of Sing-Box for your platform using one of [the aforementioned links](#-softwares).
+2. Head to https://demarcush.github.io.
+3. Click on a suitable configuration. Lite versions are suggested.
+4. When Sing-Box opens, confirm the action.
+5. Click on ▶️ button.
+> [!IMPORTANT]
+> When importing the correct config for your locale, domestic connections (to services hosted in your country) are not proxied and you can use them as if the VPN is off. So keep Sing-Box on!
+
+### فارسی
+1. آخرین نسخهٔ سینگ‌باکس پایدار (Stable) و مناسب پلتفرم خود را با استفاده از [یکی از لینک‌های بالا](#-softwares) نصب کنید.
+2. به https://demarcush.github.io بروید.
+3. روی کانفیگ مناسب خود کلیک کنید. نسخه‌های Lite پیشنهاد می‌شوند.
+4. زمانی که سینگ‌باکس باز شد، پروسه را تایید کنید.
+5. روی دکمه ▶️ کلیک کنید.
+> [!IMPORTANT]
+> زمانی که کانفیگ مناسب با محل شما استفاده شود، اتصالات محلی (به سرویس‌های میزبانی شده در کشور شما) پروکسی نخواهند شد و می‌توانید به استفاده ازشان ادامه دهید گویی که VPN خاموش است. پس سینگ‌باکس را روشن نگه دارید!
 
 ## 👨‍👩‍👧‍👦 Contribute
 For contribution to this project, you can:
