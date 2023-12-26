@@ -43,7 +43,7 @@
       "external_controller": "127.0.0.1:9090",
       "external_ui": "xd",
       "external_ui_download_detour": "direct",
-      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip",
+      "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip",
       "store_fakeip": true
     },
     "debug": {
@@ -129,13 +129,11 @@
     "auto_detect_interface": true,
     "geoip": {
       "download_detour": "direct",
-      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geoip.db",
-      "path": "geoip.db"
+      "download_url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/release/geoip.db"
     },
     "geosite": {
       "download_detour": "direct",
-      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geosite.db",
-      "path": "geosite.db"
+      "download_url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/release/geosite.db"
     },
     "override_android_vpn": true,
     "rules": [
