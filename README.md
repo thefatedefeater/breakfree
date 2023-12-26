@@ -1,7 +1,7 @@
 # 🆓 Break Free!
 Sing-Box and Clash Meta configurations for plug-n-play usage, using freely available sources  
 [👥 Telegram](https://t.me/BreakRealFree)  
-Read the [tutorials](#-tutorials) | [آموزش](#-tutorials) را بخوانید
+Read the [tutorials](#english) | [آموزش](#فارسی) را بخوانید
 
 ## 🏁 Softwares
 | Software | Homepage | Platforms |
