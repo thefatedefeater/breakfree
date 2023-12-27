@@ -32,7 +32,7 @@
         "tag": "direct"
       },
       {
-        "address": "8.8.8.8",
+        "address": "223.5.5.5",
         "detour": "direct",
         "tag": "bootstrap"
       }
@@ -61,15 +61,19 @@
     {
       "auto_route": true,
       "exclude_package": [
-        "com.android.captiveportallogin"
+        "com.android.captiveportallogin",
+        "com.biglybt.android.client",
+        "ie.equalit.ceno",
+        "org.openobservatory.ooniprobe",
+        "org.proninyaroslav.libretorrent",
+        "org.torproject.android",
+        "org.torproject.torbrowser"
       ],
       "inet4_address": "172.19.0.1/30",
       "inet6_address": "fdfe:dcba:9876::1/126",
       "platform": {
         "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 7890
+          "enabled": false
         }
       },
       "sniff": true,
@@ -153,6 +157,31 @@
       {
         "outbound": "direct",
         "port": 123
+      },
+      {
+        "outbound": "direct",
+        "process_name": [
+          "deluge",
+          "deluge.exe",
+          "lyrebird",
+          "lyrebird.exe",
+          "ooniprobe",
+          "ooniprobe.exe",
+          "picotorrent",
+          "picotorrent.exe",
+          "qbittorrent",
+          "qbittorrent-nox",
+          "qbittorrent-nox.exe",
+          "qbittorrent.exe",
+          "snowflake-client",
+          "snowflake-client.exe",
+          "tor",
+          "tor.exe",
+          "transmission",
+          "transmission.exe",
+          "webtorrent",
+          "webtorrent.exe"
+        ]
       },
       {
         "geosite": [
