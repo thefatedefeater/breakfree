@@ -63,17 +63,16 @@
       "exclude_package": [
         "com.android.captiveportallogin",
         "com.biglybt.android.client",
-        "ie.equalit.ceno",
         "org.openobservatory.ooniprobe",
-        "org.proninyaroslav.libretorrent",
-        "org.torproject.android",
-        "org.torproject.torbrowser"
+        "org.proninyaroslav.libretorrent"
       ],
       "inet4_address": "172.19.0.1/30",
       "inet6_address": "fdfe:dcba:9876::1/126",
       "platform": {
         "http_proxy": {
-          "enabled": false
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
         }
       },
       "sniff": true,
@@ -157,31 +156,6 @@
       {
         "outbound": "direct",
         "port": 123
-      },
-      {
-        "outbound": "direct",
-        "process_name": [
-          "deluge",
-          "deluge.exe",
-          "lyrebird",
-          "lyrebird.exe",
-          "ooniprobe",
-          "ooniprobe.exe",
-          "picotorrent",
-          "picotorrent.exe",
-          "qbittorrent",
-          "qbittorrent-nox",
-          "qbittorrent-nox.exe",
-          "qbittorrent.exe",
-          "snowflake-client",
-          "snowflake-client.exe",
-          "tor",
-          "tor.exe",
-          "transmission",
-          "transmission.exe",
-          "webtorrent",
-          "webtorrent.exe"
-        ]
       },
       {
         "geosite": [
