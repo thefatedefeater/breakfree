@@ -28,7 +28,7 @@
     },
     {
       "name": "yebekhe",
-      "url": "https://cdn.jsdelivr.net/gh/yebekhe/TelegramV2rayCollector@main/singbox/sfasfi/mixLite.json",
+      "url": "https://cdn.jsdelivr.net/gh/yebekhe/TVC@main/subscriptions/singbox/mix.json",
       "process": [
 	      {
 		      "exclude": ["🇮🇱", "🇷🇺", "🇨🇳", "🇮🇷"],
