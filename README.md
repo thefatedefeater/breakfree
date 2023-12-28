@@ -84,7 +84,7 @@ For contribution to this project, you can:
 - [MetaCubeX](https://github.com/MetaCubeX)
 - [mahdibland/V2RayAggregator](https://github.com/mahdibland/V2RayAggregator)
 - [soroushmirzaei/telegram-configs-collector](https://github.com/soroushmirzaei/telegram-configs-collector)
-- [yebekhe/TelegramV2rayCollector](https://github.com/yebekhe/TelegramV2rayCollector)
+- [yebekhe](https://github.com/yebekhe)
 - [MasterKia/PersianBlocker](https://github.com/MasterKia/PersianBlocker)
 - [bootmortis/iran-hosted-domains](https://github.com/bootmortis/iran-hosted-domains)
 - [Chocolate4U](https://github.com/Chocolate4U)
