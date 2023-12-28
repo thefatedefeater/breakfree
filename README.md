@@ -53,6 +53,8 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 5. Click on ▶️ button.
 > [!IMPORTANT]
 > When importing the correct config for your locale, domestic connections (to services hosted in your country) are not proxied and you can use them as if the VPN is off. So keep Sing-Box on!
+> [!NOTE]
+> After activating Sing-Box, your web dashboard is hosted on http://localhost:9090 and by opening that link, you can access all kinds of stats and Sing-Box controls. Do not forget that if you break something while messing with the dashboard, you just simply need to restart Sing-Box to fix it!
 
 ### فارسی
 1. آخرین نسخهٔ سینگ‌باکس پایدار (Stable) و مناسب پلتفرم خود را با استفاده از [یکی از لینک‌های بالا](#-softwares) نصب کنید.
@@ -62,6 +64,8 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 5. روی دکمه ▶️ کلیک کنید.
 > [!IMPORTANT]
 > زمانی که کانفیگ مناسب محل شما استفاده شود، اتصالات محلی (به سرویس‌های میزبانی شده در کشور شما) پروکسی نخواهند شد و می‌توانید به استفاده ازشان ادامه دهید گویی که VPN خاموش است. پس سینگ‌باکس را روشن نگه دارید!
+> [!NOTE]
+> پس از فعالسازی سینگ‌باکس، داشبورد وب شما در آدرس http://localhost:9090 میزبانی شده و با باز کردن این آدرس، می‌توانید به انواع آمار و کنترل‌های سینگ‌باکس دسترسی پیدا کنید. فراموش نکنید که اگر با اعمال تغییرات داخل داشبورد، مشکلی برای نرم‌افزار یا اتصال شما پیش آمد، با یک بار خاموش و روشن کردن آن می‌توانید مشکل را حل کنید!
 
 ## 👨‍👩‍👧‍👦 Contribute
 For contribution to this project, you can:
