@@ -125,11 +125,11 @@
     "auto_detect_interface": true,
     "geoip": {
       "download_detour": "direct",
-      "download_url": "https://cdn.statically.io/gh/Chocolate4U/Iran-sing-box-rules/release/geoip.db"
+      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geoip.db"
     },
     "geosite": {
       "download_detour": "direct",
-      "download_url": "https://cdn.statically.io/gh/Chocolate4U/Iran-sing-box-rules/release/geosite.db"
+      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geosite.db"
     },
     "override_android_vpn": true,
     "rules": [
