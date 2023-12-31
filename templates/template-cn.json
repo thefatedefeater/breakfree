@@ -5,7 +5,6 @@
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
     },
-    "reverse_mapping": true,
     "rules": [
       {
         "outbound": "any",
@@ -14,7 +13,7 @@
     ],
     "servers": [
       {
-        "address": "https://8.8.4.4/dns-query",
+        "address": "https://dns.google/dns-query",
         "address_resolver": "direct",
         "tag": "remote"
       },
@@ -134,19 +133,6 @@
     "override_android_vpn": true,
     "rules": [
       {
-        "mode": "or",
-        "outbound": "dns",
-        "rules": [
-          {
-            "port": 53
-          },
-          {
-            "protocol": "dns"
-          }
-        ],
-        "type": "logical"
-      },
-      {
         "outbound": "direct",
         "port": 123
       },
@@ -183,6 +169,19 @@
       {
         "geosite": "geolocation-!cn",
         "outbound": "default"
+      },
+      {
+        "mode": "or",
+        "outbound": "dns",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "type": "logical"
       }
     ]
   }
