@@ -133,6 +133,19 @@
     "override_android_vpn": true,
     "rules": [
       {
+        "mode": "or",
+        "outbound": "dns",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "type": "logical"
+      },
+      {
         "outbound": "direct",
         "port": 123
       },
@@ -172,19 +185,6 @@
       {
         "geosite": "geolocation-!cn",
         "outbound": "default"
-      },
-      {
-        "mode": "or",
-        "outbound": "dns",
-        "rules": [
-          {
-            "port": 53
-          },
-          {
-            "protocol": "dns"
-          }
-        ],
-        "type": "logical"
       }
     ]
   }
