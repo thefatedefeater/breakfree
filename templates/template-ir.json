@@ -39,7 +39,7 @@
       "store_fakeip": true
     },
     "debug": {
-      "memory_limit": "300m",
+      "memory_limit": "300 MB",
       "oom_killer": true
     }
   },
@@ -104,8 +104,7 @@
       "interval": "1h",
       "outbounds": [],
       "tag": "auto",
-      "type": "urltest",
-      "url": "https://www.google.com/robots.txt"
+      "type": "urltest"
     },
     {
       "tag": "direct",
