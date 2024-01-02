@@ -104,6 +104,7 @@
       "interval": "1h",
       "outbounds": [],
       "tag": "auto",
+      "tolerance": 1,
       "type": "urltest"
     },
     {
