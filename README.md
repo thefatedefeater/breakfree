@@ -7,7 +7,7 @@ Read the [tutorials](#english) | [آموزش](#فارسی) را بخوانید
 | Software | Homepage | Platforms |
 | -------- | -------- | --------- |
 | 📦 Sing-Box | [Github](https://github.com/SagerNet/sing-box) <br> [Docs](https://sing-box.sagernet.org) <br> [🤖 Play Store](https://play.google.com/store/apps/details?id=io.nekohasekai.sfa) <br> [🍏 App Store](https://apps.apple.com/us/app/sing-box/id6451272673) | 🦴 CLI <br> 🤖 Android <br> 🍏 iOS, macOS & tvOS <br> 💻 Windows (WIP) <br> 🐧 Linux (WIP) |
-| 🐈‍⬛ Clash Meta | [Github](https://github.com/MetaCubeX/mihomo/tree/Meta) <br> [Docs](https://wiki.metacubex.one) <br> [🤖 Play Store](https://play.google.com/store/apps/details?id=com.github.metacubex.clash.meta) <br> [💻🐧 Clash Verge](https://github.com/MetaCubeX/clash-verge/releases/latest) | 🦴 CLI <br>  🤖 Android <br> 💻 Windows <br> 🐧 Linux |
+| 🐈‍⬛ Clash Meta | [Github](https://github.com/MetaCubeX/mihomo/tree/Meta) <br> [Docs](https://wiki.metacubex.one) <br> [🤖 Play Store](https://play.google.com/store/apps/details?id=com.github.metacubex.clash.meta) <br> [💻🐧 Clash Verge](https://github.com/MetaCubeX/clash-verge/releases/latest) | 🦴 CLI <br>  🤖 Android (**Archived**) <br> 💻 Windows <br> 🐧 Linux |
 
 > [!TIP]
 > Whenever in doubt between Sing-Box and Clash Meta, choose Sing-Box.
