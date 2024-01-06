@@ -26,7 +26,7 @@ python main.py servers-lite.json templates/template-cn-sfw.json cn-sfw-lite.json
 echo "CN files exported!"
 
 git clone https://github.com/SagerNet/sing-box
-cd sing-box && git checkout main && make install && cd ..
+cd sing-box && git checkout main-next && make install && cd ..
 
 for i in ir*.json cn*.json; do sing-box -c "$i" check && echo "'$i' is OK!"; done
 
