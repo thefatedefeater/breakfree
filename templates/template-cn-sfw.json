@@ -1,7 +1,7 @@
 {
   "dns": {
     "fakeip": {
-      "enabled": false,
+      "enabled": true,
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
     },
@@ -9,24 +9,35 @@
       {
         "outbound": "any",
         "server": "direct"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
       }
     ],
     "servers": [
       {
-        "address": "https://dns.google/dns-query",
+        "address": "https://8.8.8.8/dns-query",
         "address_resolver": "direct",
         "tag": "remote"
       },
       {
-        "address": "https://223.6.6.6/dns-query",
+        "address": "https://223.5.5.5/dns-query",
         "address_resolver": "bootstrap",
         "detour": "direct",
         "tag": "direct"
       },
       {
-        "address": "223.6.6.6",
+        "address": "223.5.5.5",
         "detour": "direct",
         "tag": "bootstrap"
+      },
+      {
+        "address": "fakeip",
+        "tag": "fakeip"
       }
     ]
   },
@@ -46,12 +57,6 @@
     }
   },
   "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "listen_port": 7890,
-      "sniff": true,
-      "type": "mixed"
-    },
     {
       "auto_route": true,
       "exclude_package": [
@@ -73,6 +78,12 @@
       "stack": "gvisor",
       "strict_route": true,
       "type": "tun"
+    },
+    {
+      "listen": "127.0.0.1",
+      "listen_port": 7890,
+      "sniff": true,
+      "type": "mixed"
     }
   ],
   "log": {
@@ -103,11 +114,13 @@
       "type": "selector"
     },
     {
-      "interval": "30m",
+      "idle_timeout": "2h",
+      "interval": "1h",
       "outbounds": [],
       "tag": "auto",
-      "tolerance": 1,
-      "type": "urltest"
+      "tolerance": 50,
+      "type": "urltest",
+      "url": "https://connectivitycheck.gstatic.com/generate_204"
     },
     {
       "tag": "direct",
@@ -209,6 +222,13 @@
         "tag": "geoip-phishing",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-phishing.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geoip-private",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-private.srs"
       }
     ],
     "rules": [
@@ -217,12 +237,15 @@
         "protocol": "dns"
       },
       {
-        "ip_is_private": true,
-        "outbound": "direct"
+        "outbound": "direct",
+        "port": 123
       },
       {
         "outbound": "direct",
-        "port": 123
+        "rule_set": [
+          "geosite-private",
+          "geoip-private"
+        ]
       },
       {
         "outbound": "block",
@@ -240,14 +263,9 @@
       {
         "outbound": "direct",
         "rule_set": [
-          "geosite-private",
           "geosite-cn",
           "geoip-cn"
         ]
-      },
-      {
-        "outbound": "default",
-        "rule_set": "geosite-geolocation-!cn"
       }
     ]
   }
