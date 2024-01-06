@@ -2,6 +2,9 @@
 Sing-Box and Clash Meta configurations for plug-n-play usage, using freely available sources  
 [👥 Telegram](https://t.me/BreakRealFree)  
 Read the [tutorials](#english) | [آموزش](#فارسی) را بخوانید
+>[!IMPORTANT]
+>Sing-Box versions bellow 1.8.0 are deprecated and will not work with this config. Please upgrade.  
+>نسخه‌های زیر 1.8.0 سینگ‌باکس منقضی شده‌اند و با این کانفیگ کار نخواهند کرد. لطفا آپدیت کنید.
 
 ## 🏁 Softwares
 | Software | Homepage | Platforms |
