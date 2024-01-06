@@ -7,10 +7,6 @@
     },
     "rules": [
       {
-        "outbound": "direct",
-        "server": "direct"
-      },
-      {
         "outbound": "any",
         "server": "direct"
       }
@@ -44,7 +40,9 @@
       "external_controller": "127.0.0.1:9090",
       "external_ui": "xd",
       "external_ui_download_detour": "direct",
-      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip"
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip",
+      "store_mode": false,
+      "store_selected": false
     }
   },
   "inbounds": [
@@ -215,12 +213,12 @@
     ],
     "rules": [
       {
-        "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
         "outbound": "dns",
         "protocol": "dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
       },
       {
         "outbound": "direct",
