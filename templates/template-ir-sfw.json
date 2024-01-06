@@ -7,6 +7,10 @@
     },
     "rules": [
       {
+        "outbound": "direct",
+        "server": "direct"
+      },
+      {
         "outbound": "any",
         "server": "direct"
       }
@@ -31,16 +35,16 @@
     ]
   },
   "experimental": {
+    "cache_file": {
+      "cache_id": "breakfree-ir-sfw",
+      "enabled": true,
+      "store_fakeip": true
+    },
     "clash_api": {
       "external_controller": "127.0.0.1:9090",
       "external_ui": "xd",
       "external_ui_download_detour": "direct",
-      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip",
-      "store_fakeip": true
-    },
-    "debug": {
-      "memory_limit": "300 MB",
-      "oom_killer": true
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip"
     }
   },
   "inbounds": [
@@ -101,7 +105,7 @@
       "type": "selector"
     },
     {
-      "interval": "1h",
+      "interval": "30m",
       "outbounds": [],
       "tag": "auto",
       "tolerance": 1,
@@ -122,69 +126,130 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "geoip": {
-      "download_detour": "direct",
-      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geoip.db"
-    },
-    "geosite": {
-      "download_detour": "direct",
-      "download_url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@release/geosite.db"
-    },
     "override_android_vpn": true,
+    "rule_set": [
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-ir",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-ir.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geoip-ir",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-ir.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-category-ads-all",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-category-ads-all.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-category-porn",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-category-porn.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-cryptominers",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-cryptominers.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-geolocation-!cn",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-geolocation-!cn.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-malware",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-malware.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-nsfw",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-nsfw.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-phishing",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-phishing.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-private",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-private.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geoip-malware",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-malware.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geoip-phishing",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-phishing.srs"
+      }
+    ],
     "rules": [
       {
-        "mode": "or",
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
         "outbound": "dns",
-        "rules": [
-          {
-            "port": 53
-          },
-          {
-            "protocol": "dns"
-          }
-        ],
-        "type": "logical"
+        "protocol": "dns"
       },
       {
         "outbound": "direct",
         "port": 123
       },
       {
-        "geosite": [
-          "category-porn",
-          "nsfw",
-          "category-ads-all",
-          "malware",
-          "phishing",
-          "cryptominers"
-        ],
-        "outbound": "block"
+        "outbound": "block",
+        "rule_set": [
+          "geosite-category-ads-all",
+          "geosite-category-porn",
+          "geosite-cryptominers",
+          "geosite-malware",
+          "geosite-nsfw",
+          "geosite-phishing",
+          "geoip-malware",
+          "geoip-phishing"
+        ]
       },
       {
-        "geoip": [
-          "malware",
-          "phishing"
-        ],
-        "outbound": "block"
+        "outbound": "direct",
+        "rule_set": [
+          "geosite-private",
+          "geosite-ir",
+          "geoip-ir"
+        ]
       },
       {
-        "geosite": [
-          "private",
-          "ir",
-          "category-ir"
-        ],
-        "outbound": "direct"
-      },
-      {
-        "geoip": [
-          "private",
-          "ir"
-        ],
-        "outbound": "direct"
-      },
-      {
-        "geosite": "geolocation-!cn",
-        "outbound": "default"
+        "outbound": "default",
+        "rule_set": "geosite-geolocation-!cn"
       }
     ]
   }
