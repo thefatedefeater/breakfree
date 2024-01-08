@@ -1,21 +1,21 @@
 {
   "dns": {
     "fakeip": {
-      "enabled": true,
+      "enabled": false,
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
     },
     "rules": [
       {
-        "outbound": "any",
+        "rule_set": [
+          "geosite-private",
+          "geosite-cn"
+        ],
         "server": "direct"
       },
       {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip"
+        "outbound": "any",
+        "server": "direct"
       }
     ],
     "servers": [
@@ -34,16 +34,11 @@
         "address": "223.5.5.5",
         "detour": "direct",
         "tag": "bootstrap"
-      },
-      {
-        "address": "fakeip",
-        "tag": "fakeip"
       }
     ]
   },
   "experimental": {
     "cache_file": {
-      "cache_id": "breakfree-cn",
       "enabled": true,
       "store_fakeip": true
     },
@@ -51,9 +46,7 @@
       "external_controller": "127.0.0.1:9090",
       "external_ui": "xd",
       "external_ui_download_detour": "direct",
-      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip",
-      "store_mode": false,
-      "store_selected": false
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip"
     }
   },
   "inbounds": [
@@ -118,9 +111,8 @@
       "interval": "1h",
       "outbounds": [],
       "tag": "auto",
-      "tolerance": 50,
       "type": "urltest",
-      "url": "https://connectivitycheck.gstatic.com/generate_204"
+      "url": "https://www.gstatic.com/generate_204"
     },
     {
       "tag": "direct",
@@ -149,9 +141,23 @@
       {
         "download_detour": "direct",
         "format": "binary",
+        "tag": "geosite-ir",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-ir.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
         "tag": "geoip-cn",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-cn.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geoip-ir",
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geoip-ir.srs"
       },
       {
         "download_detour": "direct",
@@ -163,23 +169,9 @@
       {
         "download_detour": "direct",
         "format": "binary",
-        "tag": "geosite-category-porn",
-        "type": "remote",
-        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-category-porn.srs"
-      },
-      {
-        "download_detour": "direct",
-        "format": "binary",
         "tag": "geosite-cryptominers",
         "type": "remote",
         "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-cryptominers.srs"
-      },
-      {
-        "download_detour": "direct",
-        "format": "binary",
-        "tag": "geosite-geolocation-!cn",
-        "type": "remote",
-        "url": "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-sing-box-rules@rule-set/geosite-geolocation-!cn.srs"
       },
       {
         "download_detour": "direct",
@@ -235,10 +227,6 @@
       {
         "outbound": "dns",
         "protocol": "dns"
-      },
-      {
-        "outbound": "direct",
-        "port": 123
       },
       {
         "outbound": "direct",
