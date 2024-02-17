@@ -10,13 +10,10 @@ Read the [tutorials](#english) | [آموزش](#فارسی) را بخوانید
 | Software | Homepage | Platforms |
 | -------- | -------- | --------- |
 | 📦 Sing-Box | [Github](https://github.com/SagerNet/sing-box) <br> [Docs](https://sing-box.sagernet.org) <br> [🤖 Play Store](https://play.google.com/store/apps/details?id=io.nekohasekai.sfa) <br> [🍏 App Store](https://apps.apple.com/us/app/sing-box/id6451272673) | 🦴 CLI <br> 🤖 Android <br> 🍏 iOS, macOS & tvOS <br> 💻 Windows (WIP) <br> 🐧 Linux (WIP) |
-| 🐈‍⬛ Clash Meta | [Github](https://github.com/MetaCubeX/mihomo/tree/Meta) <br> [Docs](https://wiki.metacubex.one) <br> [🤖 Play Store](https://play.google.com/store/apps/details?id=com.github.metacubex.clash.meta) <br> [💻🐧 Clash Verge](https://github.com/MetaCubeX/clash-verge/releases/latest) | 🦴 CLI <br>  🤖 Android (**Archived**) <br> 💻 Windows <br> 🐧 Linux |
+| 🐈‍⬛ Clash Meta | [Github](https://github.com/MetaCubeX/mihomo/tree/Meta) <br> [Docs](https://wiki.metacubex.one) <br> [🤖 Play Store](https://play.google.com/store/apps/details?id=com.github.metacubex.clash.meta) <br> [🤖 F-Droid](https://f-droid.org/en/packages/com.github.metacubex.clash.meta/) <br> [💻🐧 Clash Verge](https://github.com/MetaCubeX/clash-verge/releases/latest) | 🦴 CLI <br> 🤖 Android <br> 💻 Windows <br> 🐧 Linux |
 
 > [!TIP]
 > Whenever in doubt between Sing-Box and Clash Meta, choose Sing-Box.
-
-> [!IMPORTANT]
-> Clash Meta configs will not work for Android until new versions released from MetaCubeX.
 
 > [!NOTE]
 > Looking for Clash? Clash is dead.
@@ -49,28 +46,28 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 
 ## 🦮 Tutorials
 ### English
-1. Install the latest stable version of Sing-Box for your platform using one of [the aforementioned links](#-softwares).
+1. Install the latest stable version of your desired software using one of [the aforementioned links](#-softwares).
 2. Head to https://demarcush.github.io.
 3. Click on a suitable configuration. Lite versions are suggested.
-4. When Sing-Box opens, confirm the action.
-5. Click on ▶️ button.
+4. When application opens up, confirm the action.
+5. Start the application.
 > [!IMPORTANT]
 > When importing the correct config for your locale, domestic connections (to services hosted in your country) are not proxied and you can use them as if the VPN is off. So keep Sing-Box on!
 
 > [!NOTE]
-> After activating Sing-Box, your web dashboard is hosted on http://localhost:9090 and by opening that link, you can access all kinds of stats and Sing-Box controls.
+> After activation, your web dashboard is hosted on http://localhost:9090 and by opening that link, you can access all kinds of stats and controls.
 
 ### فارسی
-1. آخرین نسخهٔ سینگ‌باکس پایدار (Stable) و مناسب پلتفرم خود را با استفاده از [یکی از لینک‌های بالا](#-softwares) نصب کنید.
+1. آخرین نسخهٔ نرم‌افزار مورد نظر خود را با استفاده از [یکی از لینک‌های بالا](#-softwares) نصب کنید.
 2. به https://demarcush.github.io بروید.
 3. روی کانفیگ مناسب خود کلیک کنید. نسخه‌های Lite پیشنهاد می‌شوند.
-4. زمانی که سینگ‌باکس باز شد، پروسه را تایید کنید.
-5. روی دکمه ▶️ کلیک کنید.
+4. زمانی که برنامه باز شد، پروسه را تایید کنید.
+5. نرم‌افزار را استارت کنید.
 > [!IMPORTANT]
 > زمانی که کانفیگ مناسب محل شما استفاده شود، اتصالات محلی (به سرویس‌های میزبانی شده در کشور شما) پروکسی نخواهند شد و می‌توانید به استفاده ازشان ادامه دهید گویی که VPN خاموش است. پس سینگ‌باکس را روشن نگه دارید!
 
 > [!NOTE]
-> پس از فعالسازی سینگ‌باکس، داشبورد وب شما در آدرس http://localhost:9090 میزبانی شده و با باز کردن این آدرس، می‌توانید به انواع آمار و کنترل‌های سینگ‌باکس دسترسی پیدا کنید.
+> پس از فعالسازی، داشبورد وب شما در آدرس http://localhost:9090 میزبانی شده و با باز کردن این آدرس، می‌توانید به انواع آمار و کنترل‌ها دسترسی پیدا کنید.
 
 ## 👨‍👩‍👧‍👦 Contribute
 For contribution to this project, you can:
