@@ -49,7 +49,7 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 4. When application opens up, confirm the action.
 5. Start the application.
 > [!IMPORTANT]
-> When importing the correct config for your locale, domestic connections (to services hosted in your country) are not proxied and you can use them as if the VPN is off. So keep Sing-Box on!
+> When importing the correct config for your locale, domestic connections (to services hosted in your country) are not proxied and you can use them as if the VPN is off. So keep the app on!
 
 > [!NOTE]
 > After activation, your web dashboard is hosted on http://localhost:9090 and by opening that link, you can access all kinds of stats and controls.
@@ -61,7 +61,7 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 4. زمانی که برنامه باز شد، پروسه را تایید کنید.
 5. نرم‌افزار را استارت کنید.
 > [!IMPORTANT]
-> زمانی که کانفیگ مناسب محل شما استفاده شود، اتصالات محلی (به سرویس‌های میزبانی شده در کشور شما) پروکسی نخواهند شد و می‌توانید به استفاده ازشان ادامه دهید گویی که VPN خاموش است. پس سینگ‌باکس را روشن نگه دارید!
+> زمانی که کانفیگ مناسب محل شما استفاده شود، اتصالات محلی (به سرویس‌های میزبانی شده در کشور شما) پروکسی نخواهند شد و می‌توانید به استفاده ازشان ادامه دهید گویی که VPN خاموش است. پس نرم‌افزار را روشن نگه دارید!
 
 > [!NOTE]
 > پس از فعالسازی، داشبورد وب شما در آدرس http://localhost:9090 میزبانی شده و با باز کردن این آدرس، می‌توانید به انواع آمار و کنترل‌ها دسترسی پیدا کنید.
