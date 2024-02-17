@@ -4,16 +4,16 @@
 ## Software: Clash Meta
 ## Country: Iran
 
-p: &p {type: "http", interval: 86400, exclude-type: "http|socks5", exclude-filter: "🇮🇱|🇨🇳|🇷🇺|🇮🇷", health-check: {enable: true, interval: 10800, lazy: false, url: "https://www.google.com/robots.txt"}}
+p: &p {type: "http", interval: 86400, exclude-type: "http|socks5", exclude-filter: "🇮🇱|🇨🇳|🇷🇺|🇮🇷", health-check: {enable: true, interval: 10800, lazy: true, url: "https://www.google.com/generate_204"}}
 
 allow-lan: true
 external-controller: '127.0.0.1:9090'
-external-ui: ui
+external-ui: ./xd
+external-ui-name: xd
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip"
 find-process-mode: "strict"
 geodata-mode: true
 geo-auto-update: true
-geo-update-interval: 168
 global-client-fingerprint: "random"
 ipv6: true
 log-level: "error" ## silent/error/warning/info/debug
@@ -22,17 +22,12 @@ mode: "rule"
 tcp-concurrent: true
 unified-delay: true
 
-geox-url:
-  geoip: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-v2ray-rules@release/geoip.dat"
-  geosite: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-v2ray-rules@release/geosite.dat"
-  mmdb: "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-v2ray-rules@release/geoip.metadb"
-
 profile:
   store-fake-ip: true
   store-selected: false
 
 ntp:
-  enable: true
+  enable: false
   write-to-system: false
   server: "pool.ntp.org"
 
@@ -40,29 +35,35 @@ tun:
   enable: false
   stack: "gvisor" ## system/gvisor/mixed
   dns-hijack:
-    - "udp://any:53"
-    - "tcp://any:53"
+    - "any:53"
   auto-route: true
   strict-route: true
   auto-detect-interface: true
+  exclude-package:
+  - com.android.captiveportallogin
+  - com.biglybt.android.client
+  - org.openobservatory.ooniprobe
+  - org.proninyaroslav.libretorrent
 
 dns:
   enable: true
   listen: '127.0.0.1:1053'
-  ipv6: false
+  ipv6: true
   prefer-h3: true
   enhanced-mode: "redir-host"
   use-hosts: true
   default-nameserver:
-    - '8.8.4.4'
-    - '223.5.5.5'
+    - '8.8.8.8'
   proxy-server-nameserver:
-    - "https://pro.shecan.ir/dns-query"
-    - "https://1.0.0.1/dns-query"
-    - "https://223.5.5.5/dns-query"
+    - "https://1.1.1.1/dns-query"
+    - "https://8.8.8.8/dns-query"
+    - "https://9.9.9.9/dns-query"
+    - "https://snoke.meganerd.nl/dns-query"
   nameserver:
-    - "https://1.0.0.1/dns-query#default"
-    - "https://8.8.4.4/dns-query#default"
+    - "https://1.1.1.1/dns-query#default"
+    - "https://8.8.8.8/dns-query#default"
+    - "https://9.9.9.9/dns-query#default"
+    - "https://185.222.222.222/dns-query#default"
   fallback-filter:
     geoip: false
 
@@ -88,34 +89,110 @@ proxy-groups:
 proxy-providers:
 
   aggregator:
-    url: "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml"
+    url: "https://cdn.jsdelivr.net/gh/mahdibland/V2RayAggregator@master/sub/sub_merge_yaml.yml"
     path: "./providers/aggregator.yaml"
     <<: *p
 
-  soroush:
-    url: "https://api.yebekhe.link/toClash/?url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&type=meta&process=full"
-    #url: "https://api.sublink.dev/sub?target=clash&url=https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed&emoji=false&list=true&fdn=true"
-    path: "./providers/soroush.yaml"
-    <<: *p
-
   yebekhe:
-    url: "https://api.yebekhe.link/toClash/?url=https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/base64/mix&type=meta&process=full"
+    url: "https://cdn.jsdelivr.net/gh/yebekhe/TVC@main/subscriptions/meta/mix"
     path: "./providers/yebekhe.yaml"
     <<: *p
 
+rule-providers:
+
+  ir:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/ir.txt"
+    path: ./ruleset/ir.txt
+    interval: 86400
+
+  ircidr:
+    type: http
+    format: text
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/ircidr.txt"
+    path: ./ruleset/ircidr.txt
+    interval: 86400
+
+  apps:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/apps.txt"
+    path: ./ruleset/apps.txt
+    interval: 86400
+
+  category-ads-all:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/category-ads-all.txt"
+    path: ./ruleset/category-ads-all.txt
+    interval: 86400
+
+  cryptominers:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/cryptominers.txt"
+    path: ./ruleset/cryptominers.txt
+    interval: 86400
+
+  malware:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/malware.txt"
+    path: ./ruleset/malware.txt
+    interval: 86400
+
+  malware-ip:
+    type: http
+    format: text
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/malware-ip.txt"
+    path: ./ruleset/malware-ip.txt
+    interval: 86400
+
+  nsfw:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/nsfw.txt"
+    path: ./ruleset/nsfw.txt
+    interval: 86400
+
+  phishing:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/phishing.txt"
+    path: ./ruleset/phishing.txt
+    interval: 86400
+
+  phishing-ip:
+    type: http
+    format: text
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/phishing-ip.txt"
+    path: ./ruleset/phishing-ip.txt
+    interval: 86400
+
 rules:
-  - OR,((GEOSITE,private),(GEOIP,private,no-resolve)),DIRECT
+  - OR,((GEOSITE,private),(GEOIP,private,no-resolve),(RULE-SET,apps)),DIRECT
 
-  - OR,((GEOSITE,category-ads-all),(GEOSITE,malware),(GEOSITE,phishing),(GEOSITE,cryptominers)),REJECT
-  #- OR,((GEOSITE,category-porn),(GEOSITE,nsfw)),REJECT ## Pornography and gambling
+  - OR,((RULE-SET,category-ads-all),(RULE-SET,malware),(RULE-SET,phishing),(RULE-SET,cryptominers)),REJECT
+  #- RULE-SET,nsfw,REJECT ## Pornography and gambling
 
-  - OR,((GEOSITE,category-ir),(GEOSITE,ir)),DIRECT
+  - RULE-SET,ir,DIRECT
   - OR,((DOMAIN-SUFFIX,d.metacubex.one),(DOMAIN-SUFFIX,yacd.haishan.me)),DIRECT ## Dashboards
   #- GEOSITE,category-games,DIRECT ## Gaming
 
   - GEOSITE,geolocation-!cn,default ## When all else failed, vote from the rooftops.
 
-  - OR,((GEOIP,malware),(GEOIP,phishing)),REJECT
-  - GEOIP,ir,DIRECT
+  - OR,((RULE-SET,malware-ip),(RULE-SET,phishing-ip)),REJECT
+  - RULE-SET,ircidr,DIRECT
 
   - MATCH,default
