@@ -4,14 +4,14 @@
 ## Software: Clash Meta
 ## Country: Iran
 
-p: &p {type: "http", interval: 86400, exclude-type: "http|socks5", exclude-filter: "🇮🇱|🇨🇳|🇷🇺|🇮🇷", health-check: {enable: true, interval: 10800, lazy: true, url: "https://www.google.com/generate_204"}}
+p: &p {type: "http", interval: 86400, exclude-type: "http|socks5", exclude-filter: "🇮🇱|🇨🇳|🇷🇺|🇮🇷|🇹🇷", health-check: {enable: true, interval: 3600, lazy: true, url: "https://www.google.com/generate_204"}}
 
 allow-lan: true
 external-controller: '127.0.0.1:9090'
 external-ui: ./xd
 external-ui-name: xd
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip"
-find-process-mode: "strict"
+find-process-mode: "always"
 geodata-mode: true
 geo-auto-update: true
 global-client-fingerprint: "random"
@@ -37,7 +37,7 @@ tun:
   dns-hijack:
     - "any:53"
   auto-route: true
-  strict-route: true
+  strict-route: false
   auto-detect-interface: true
   exclude-package:
   - com.android.captiveportallogin
@@ -53,6 +53,7 @@ dns:
   enhanced-mode: "redir-host"
   use-hosts: true
   default-nameserver:
+    - '127.0.0.1'
     - '8.8.8.8'
   proxy-server-nameserver:
     - "https://1.1.1.1/dns-query"
