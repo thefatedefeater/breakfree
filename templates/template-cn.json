@@ -73,7 +73,7 @@
       },
       "sniff": true,
       "stack": "gvisor",
-      "strict_route": true,
+      "strict_route": false,
       "type": "tun"
     },
     {
