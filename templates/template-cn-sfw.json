@@ -1,10 +1,11 @@
 {
   "dns": {
     "fakeip": {
-      "enabled": false,
+      "enabled": true,
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
     },
+    "independent_cache": true,
     "rules": [
       {
         "domain_suffix": ".cn",
@@ -20,12 +21,20 @@
       {
         "outbound": "any",
         "server": "direct"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
       }
     ],
     "servers": [
       {
-        "address": "8.8.8.8",
+        "address": "https://dns.google/dns-query",
         "address_resolver": "direct",
+        "detour": "default",
         "tag": "remote"
       },
       {
@@ -38,6 +47,10 @@
         "address": "223.5.5.5",
         "detour": "direct",
         "tag": "bootstrap"
+      },
+      {
+        "address": "fakeip",
+        "tag": "fakeip"
       }
     ]
   },
@@ -79,7 +92,7 @@
       },
       "sniff": true,
       "stack": "gvisor",
-      "strict_route": false,
+      "strict_route": true,
       "type": "tun"
     },
     {
