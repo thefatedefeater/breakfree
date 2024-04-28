@@ -2,7 +2,7 @@
 export GOPROXY="https://proxy.golang.org,direct"
 
 git clone https://github.com/SagerNet/serenity
-cd serenity && make install && cd ..
+cd serenity && git checkout main && make install && cd ..
 serenity -c serenity.json run &
 sleep 20
 
