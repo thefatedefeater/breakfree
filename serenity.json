@@ -11,16 +11,17 @@
       "url": "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/Eternity.yml",
       "process": [
         {
+          "remove": true,
           "exclude": [
-            "AE",
-            "BH",
-            "CN",
-            "IL",
-            "IR",
-            "RU",
-            "TR"
+            "🇦🇪",
+            "🇧🇭",
+            "🇨🇳",
+            "🇮🇱",
+            "🇮🇷",
+            "🇷🇺",
+            "🇹🇷"
           ],
-          "exclude_outbound_type": [
+          "exclude_type": [
             "http",
             "socks",
             "shadowsocksr"
@@ -33,16 +34,17 @@
       "url": "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml",
       "process": [
         {
+          "remove": true,
           "exclude": [
-            "AE",
-            "BH",
-            "CN",
-            "IL",
-            "IR",
-            "RU",
-            "TR"
+            "🇦🇪",
+            "🇧🇭",
+            "🇨🇳",
+            "🇮🇱",
+            "🇮🇷",
+            "🇷🇺",
+            "🇹🇷"
           ],
-          "exclude_outbound_type": [
+          "exclude_type": [
             "http",
             "socks",
             "shadowsocksr"
@@ -55,16 +57,17 @@
       "url": "https://raw.githubusercontent.com/yebekhe/TVC/main/subscriptions/singbox/mix.json",
       "process": [
         {
+          "remove": true,
           "exclude": [
-            "AE",
-            "BH",
-            "CN",
-            "IL",
-            "IR",
-            "RU",
-            "TR"
+            "🇦🇪",
+            "🇧🇭",
+            "🇨🇳",
+            "🇮🇱",
+            "🇮🇷",
+            "🇷🇺",
+            "🇹🇷"
           ],
-          "exclude_outbound_type": [
+          "exclude_type": [
             "http",
             "socks",
             "shadowsocksr"
