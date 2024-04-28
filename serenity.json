@@ -9,7 +9,6 @@
     {
       "name": "aggregator-lite",
       "url": "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/Eternity.yml",
-      "deduplication": true,
       "process": [
         {
           "exclude": [
@@ -32,7 +31,6 @@
     {
       "name": "aggregator",
       "url": "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_yaml.yml",
-      "deduplication": true,
       "process": [
         {
           "exclude": [
@@ -55,7 +53,6 @@
     {
       "name": "yebekhe",
       "url": "https://raw.githubusercontent.com/yebekhe/TVC/main/subscriptions/singbox/mix.json",
-      "deduplication": true,
       "process": [
         {
           "exclude": [
