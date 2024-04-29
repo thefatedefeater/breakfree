@@ -12,7 +12,7 @@
       "process": [
         {
           "remove": true,
-          "exclude": [
+          "filter": [
             "🇦🇪",
             "🇧🇭",
             "🇨🇳",
@@ -21,7 +21,7 @@
             "🇷🇺",
             "🇹🇷"
           ],
-          "exclude_type": [
+          "filter_type": [
             "http",
             "socks",
             "shadowsocksr"
@@ -35,7 +35,7 @@
       "process": [
         {
           "remove": true,
-          "exclude": [
+          "filter": [
             "🇦🇪",
             "🇧🇭",
             "🇨🇳",
@@ -44,7 +44,7 @@
             "🇷🇺",
             "🇹🇷"
           ],
-          "exclude_type": [
+          "filter_type": [
             "http",
             "socks",
             "shadowsocksr"
@@ -58,7 +58,7 @@
       "process": [
         {
           "remove": true,
-          "exclude": [
+          "filter": [
             "🇦🇪",
             "🇧🇭",
             "🇨🇳",
@@ -67,7 +67,7 @@
             "🇷🇺",
             "🇹🇷"
           ],
-          "exclude_type": [
+          "filter_type": [
             "http",
             "socks",
             "shadowsocksr"
