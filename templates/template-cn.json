@@ -134,7 +134,7 @@
       "outbounds": [],
       "tag": "auto",
       "type": "urltest",
-      "url": "https://www.google.com/generate_204"
+      "url": "https://cp.cloudflare.com"
     },
     {
       "tag": "direct",
