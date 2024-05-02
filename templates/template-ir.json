@@ -91,7 +91,6 @@
         }
       },
       "sniff": true,
-      "stack": "gvisor",
       "strict_route": true,
       "type": "tun"
     },
