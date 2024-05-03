@@ -38,7 +38,7 @@
         "tag": "remote"
       },
       {
-        "address": "https://snoke.meganerd.nl/dns-query",
+        "address": "https://max.rethinkdns.com/dns-query",
         "address_resolver": "bootstrap",
         "detour": "direct",
         "tag": "direct"
