@@ -4,7 +4,7 @@
 ## Software: Clash Meta
 ## Country: China (Safe for Work)
 
-p: &p {type: "http", interval: 86400, exclude-type: "http|socks5", exclude-filter: "AE|BH|CN|IL|IR|RU|TR", health-check: {enable: true, interval: 3600, lazy: true, url: "https://cp.cloudflare.com", expected-status: 204}}
+p: &p {type: "http", interval: 86400, exclude-type: "http|socks5", exclude-filter: "AE|BH|CN|IL|IR|RU|TR", health-check: {enable: true, interval: 3600, lazy: true, url: "https://youtu.be/robots.txt", expected-status: 200}}
 
 allow-lan: true
 external-controller: '127.0.0.1:9090'
