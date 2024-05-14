@@ -23,18 +23,18 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 ## ⚙️ Configs
 | TITLE | NOTES | URLs |
 | ----- | ----- | ---- |
-| 📦 Sing-Box Iran 🇮🇷 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Sing-Box/ir.json) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Sing-Box/ir.json) |
-| 📦 Sing-Box Lite Iran 🇮🇷 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Sing-Box/ir-lite.json) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Sing-Box/ir-lite.json) |
-| 📦 Sing-Box Iran 🇮🇷 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Sing-Box/ir-sfw.json) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Sing-Box/ir-sfw.json) |
-| 📦 Sing-Box Lite Iran 🇮🇷 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Sing-Box/ir-sfw-lite.json) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Sing-Box/ir-sfw-lite.json) |
-| 📦 Sing-Box China 🇨🇳 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Sing-Box/cn.json) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Sing-Box/cn.json) |
-| 📦 Sing-Box Lite China 🇨🇳 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Sing-Box/cn-lite.json) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Sing-Box/cn-lite.json) |
-| 📦 Sing-Box China 🇨🇳 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Sing-Box/cn-sfw.json) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Sing-Box/cn-sfw.json) |
-| 📦 Sing-Box Lite China 🇨🇳 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Sing-Box/cn-sfw-lite.json) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Sing-Box/cn-sfw-lite.json) |
-| 🐈‍⬛ Meta Iran 🇮🇷 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Meta/meta-ir.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Meta/meta-ir.yaml) |
-| 🐈‍⬛ Meta Iran 🇮🇷 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Meta/meta-ir-sfw.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Meta/meta-ir-sfw.yaml) |
-| 🐈‍⬛ Meta China 🇨🇳 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Meta/meta-cn.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Meta/meta-cn.yaml) |
-| 🐈‍⬛ Meta China 🇨🇳 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/demarcush/breakfree@master/release/Meta/meta-cn-sfw.yaml) <br> [Statically](https://cdn.statically.io/gh/demarcush/breakfree/master/release/Meta/meta-cn-sfw.yaml) |
+| 📦 Sing-Box Iran 🇮🇷 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Sing-Box/ir.json) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Sing-Box/ir.json) |
+| 📦 Sing-Box Lite Iran 🇮🇷 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Sing-Box/ir-lite.json) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Sing-Box/ir-lite.json) |
+| 📦 Sing-Box Iran 🇮🇷 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Sing-Box/ir-sfw.json) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Sing-Box/ir-sfw.json) |
+| 📦 Sing-Box Lite Iran 🇮🇷 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Sing-Box/ir-sfw-lite.json) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Sing-Box/ir-sfw-lite.json) |
+| 📦 Sing-Box China 🇨🇳 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Sing-Box/cn.json) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Sing-Box/cn.json) |
+| 📦 Sing-Box Lite China 🇨🇳 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Sing-Box/cn-lite.json) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Sing-Box/cn-lite.json) |
+| 📦 Sing-Box China 🇨🇳 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Sing-Box/cn-sfw.json) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Sing-Box/cn-sfw.json) |
+| 📦 Sing-Box Lite China 🇨🇳 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Sing-Box/cn-sfw-lite.json) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Sing-Box/cn-sfw-lite.json) |
+| 🐈‍⬛ Meta Iran 🇮🇷 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Meta/meta-ir.yaml) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Meta/meta-ir.yaml) |
+| 🐈‍⬛ Meta Iran 🇮🇷 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 Iran Domains <br> 🌐 Iran IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Meta/meta-ir-sfw.yaml) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Meta/meta-ir-sfw.yaml) |
+| 🐈‍⬛ Meta China 🇨🇳 | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Meta/meta-cn.yaml) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Meta/meta-cn.yaml) |
+| 🐈‍⬛ Meta China 🇨🇳 (Safe for Work) | ❌ Advertisement <br> ❌ Malware <br> ❌ Phishing <br> ❌ Cryptominers <br> **❌ Pornography** <br> **❌ Gambling** <br> 🌐 China Domains <br> 🌐 China IPs <br> 🛡️ Anything Else | [jsDelivr](https://cdn.jsdelivr.net/gh/thefatedefeater/breakfree@master/release/Meta/meta-cn-sfw.yaml) <br> [Statically](https://cdn.statically.io/gh/thefatedefeater/breakfree/master/release/Meta/meta-cn-sfw.yaml) |
 > [!NOTE]
 > ❌: Blocked <br> 🌐: Direct Connection <br> 🛡️: Proxied
 
@@ -44,7 +44,7 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 ## 🦮 Tutorials
 ### English
 1. Install the latest stable version of your desired software using one of [the aforementioned links](#-softwares).
-2. Head to https://demarcush.github.io.
+2. Head to https://thefatedefeater.github.io.
 3. Click on a suitable configuration. Lite versions are suggested.
 4. When application opens up, confirm the action.
 5. Start the application.
@@ -56,7 +56,7 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 
 ### فارسی
 1. آخرین نسخهٔ نرم‌افزار مورد نظر خود را با استفاده از [یکی از لینک‌های بالا](#-softwares) نصب کنید.
-2. به https://demarcush.github.io بروید.
+2. به https://thefatedefeater.github.io بروید.
 3. روی کانفیگ مناسب خود کلیک کنید. نسخه‌های Lite پیشنهاد می‌شوند.
 4. زمانی که برنامه باز شد، پروسه را تایید کنید.
 5. نرم‌افزار را استارت کنید.
@@ -70,8 +70,8 @@ While making every effort to provide a template of Sing-Box and Clash Meta confi
 For contribution to this project, you can:
 - Introduce new sources of aggregated servers
 - Test and feedback
-- Help with the [issues](https://github.com/demarcush/breakfree/issues)
-- Make a [pull request](https://github.com/demarcush/breakfree/pulls) with a config of your own country
+- Help with the [issues](https://github.com/thefatedefeater/breakfree/issues)
+- Make a [pull request](https://github.com/thefatedefeater/breakfree/pulls) with a config of your own country
 - Translate this README to your language
 - Anything else you can think of...
 
